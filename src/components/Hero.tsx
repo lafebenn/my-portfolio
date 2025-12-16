@@ -27,12 +27,27 @@ const Hero = () => {
         {/* Status badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8 animate-fade-in backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-sm text-muted-foreground">Available for new projects</span>
+          <span className="text-sm text-muted-foreground">New projects coming soon!</span>
         </div>
+
+        {/* --- NEW PROFILE PICTURE SECTION --- */}
+        <div className="mb-6 animate-fade-in flex justify-center" style={{ animationDelay: "0.05s" }}>
+            <div className="relative w-40 h-40">
+                {/* Image */}
+                <img 
+                    src="/profile-pic.jpg" 
+                    alt="William Bennett" 
+                    className="w-full h-full rounded-full object-cover border-4 border-secondary/50 shadow-lg"
+                />
+                {/* Optional Glow Effect behind image */}
+                <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl -z-10" />
+            </div>
+        </div>
+        {/* ----------------------------------- */}
 
         {/* Main heading */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          Hi, I'm <span className="text-gradient">Your Name</span>
+          Hi, I'm <span className="text-gradient">William Bennett</span>
         </h1>
 
         {/* Subtitle */}
@@ -55,7 +70,7 @@ const Hero = () => {
         {/* Social links */}
         <div className="flex items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <a 
-            href="https://github.com" 
+            href="https://github.com/lafebenn" 
             target="_blank" 
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group"
@@ -63,7 +78,7 @@ const Hero = () => {
             <Github className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/will-bennettt/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group"
@@ -71,7 +86,7 @@ const Hero = () => {
             <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
           </a>
           <a 
-            href="mailto:your@email.com"
+            href="mailto:willbennett2003@gmail.com"
             className="p-3 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group"
           >
             <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />

@@ -19,9 +19,9 @@ const Contact = () => {
         {/* Email CTA */}
         <div className="mb-12">
           <Button variant="hero" size="lg" asChild className="group">
-            <a href="mailto:your@email.com">
+            <a href="mailto:willbennett2003@gmail.com">
               <Mail className="w-5 h-5" />
-              your@email.com
+              willbennett2003@gmail.com
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </Button>
@@ -30,7 +30,7 @@ const Contact = () => {
         {/* Social Links */}
         <div className="flex items-center justify-center gap-6">
           <a 
-            href="https://github.com" 
+            href="https://github.com/lafebenn" 
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -40,23 +40,13 @@ const Contact = () => {
           </a>
           <div className="w-px h-4 bg-border" />
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/will-bennettt/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Linkedin className="w-5 h-5" />
             <span className="text-sm">LinkedIn</span>
-          </a>
-          <div className="w-px h-4 bg-border" />
-          <a 
-            href="https://twitter.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Twitter className="w-5 h-5" />
-            <span className="text-sm">Twitter</span>
           </a>
         </div>
       </div>

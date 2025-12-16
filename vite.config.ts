@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/my-portfolio/", // Must match your repo name exactly with slashes
+  base: "/", // Changed to root path, now root of willbennett.org
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {

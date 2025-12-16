@@ -1,9 +1,27 @@
 import { Badge } from "@/components/ui/badge";
 
 const skills = [
-  "JavaScript", "TypeScript", "React", "Next.js", "Node.js", 
-  "Python", "PostgreSQL", "MongoDB", "GraphQL", "REST APIs",
-  "n8n", "Make", "Zapier", "Git", "Docker", "AWS"
+  "React",
+  "Node.js",
+  "Python", 
+  "AWS (EC2, S3, Elastic Beanstalk)", 
+  "Docker",
+  "PostgreSQL",
+  "Linux / Bash",
+  "Unity (C#)",
+  "AR / MR",
+  "XREAL SDK",
+  "TypeScript",
+  "SQL",
+  "Git",
+  "GitHub",
+  "Tableau",
+  "Power BI",
+  "REST APIs",
+  "HTML/CSS",
+  "Javascript",
+  "Excel",
+  "VBA"
 ];
 
 const About = () => {
@@ -23,18 +41,21 @@ const About = () => {
             
             <div className="space-y-4 text-muted-foreground">
               <p className="text-lg">
-                I'm a passionate developer and automation specialist with a love for building 
-                elegant solutions to complex problems. With experience across the full stack, 
-                I create applications that are both beautiful and performant.
+                I am an Information Systems student and Full-Stack Developer driven by a curiosity for how 
+                complex systems scale. My background bridges the gap between technical execution and strategic 
+                leadership. From engineering AR tools for HCI research at BYU to serving as CTO for 
+                a platform serving 10,000+ users, I thrive in environments that require both deep technical 
+                knowledge and big-picture thinking.
               </p>
               <p>
-                When I'm not coding, I'm exploring new technologies, contributing to open source, 
-                or finding ways to automate repetitive tasks. I believe in writing clean, 
-                maintainable code and creating experiences that users love.
+                I specialize in building secure, production-grade applications using React, Node.js, and AWS. 
+                Beyond just writing code, I have experience deploying containerized environments with Docker [cite: 16, 28] 
+                and managing cloud infrastructure on Linux-based systems.
               </p>
               <p>
-                Currently focused on building AI-powered tools and automation workflows 
-                that help businesses scale efficiently.
+                When I'm not developing, I am likely analyzing data trends with Python and Tableau, 
+                exploring new automation workflows, or refining my Portuguese. I believe in building 
+                solutions that are not just functional, but scalable, secure, and intuitive.
               </p>
             </div>
 
@@ -60,8 +81,8 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10" />
                 <div className="absolute inset-4 rounded-xl border border-border/30 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl font-bold text-gradient mb-2">5+</div>
-                    <div className="text-muted-foreground text-sm">Years of Experience</div>
+                    <div className="text-6xl font-bold text-gradient mb-2">15,000+</div>
+                    <div className="text-muted-foreground text-sm">Clients Served with Digital Solutions</div>
                   </div>
                 </div>
               </div>

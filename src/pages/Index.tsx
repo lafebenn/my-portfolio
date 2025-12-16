@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Your Name | Developer & Automation Specialist</title>
+        <title>William Bennett | Information Systems Student and Research Assistant</title>
         <meta name="description" content="Portfolio showcasing web development projects, automation workflows, and open-source contributions. Building modern digital experiences." />
         <meta name="keywords" content="developer, portfolio, web development, automation, react, python" />
       </Helmet>
