@@ -5,7 +5,56 @@ import { Globe, Code2, Zap, Layers } from "lucide-react";
 
   const projects = [
     {
-      title: "INTEX (4th Place)",
+      title: "LTO Pipeline — SAM ROI Automation",
+      description:
+        "Python + Streamlit pipeline that automates ROI extraction from ROAR and ELP documents for enterprise SAM engagements. Built during Anglepoint's intern competition (LTO — License to Operate), the tool replaces manual spreadsheet workflows with an automated ingestion and analysis pipeline for licensing compliance data.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+      type: "automation" as ProjectType,
+      technologies: ["Python", "Streamlit", "Pandas", "SAM", "ITAM", "ROAR Methodology"],
+      // githubUrl: "",  ← add repo URL after June 12
+      // liveUrl: "",    ← add live demo URL when available
+      featured: true,
+    },
+    {
+      title: "Leadership Values & Integrity Analysis",
+      description: "Python/NLP research project for the Romney Institute of Public Service and Ethics. Used vectorized scoring to analyze every presidential Inaugural Address and State of the Union speech paragraph-by-paragraph against constitutional leadership values — contributing to a co-authored Academy of Management Perspectives paper in progress.",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop",
+      type: "code" as ProjectType,
+      technologies: ["Python", "NLP", "Pandas", "LLM Scoring", "Data Analysis", "Research"],
+      liveUrl: "https://github.com/lafebenn/Leadership-Values-and-Integrity-Analysis",
+      featured: true,
+    },
+    {
+      title: "Bonfire INTEX — Full-Stack + ML",
+      description: "Full-stack INTEX deployment: C# / .NET API (Bonfire.API), React and TypeScript frontend, PostgreSQL, Tableau, AWS workflows, and an ml-pipelines package with Jupyter notebooks for ML and data work — all in one monorepo.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      type: "code" as ProjectType,
+      technologies: ["C#", ".NET", "TypeScript", "React", "PostgreSQL", "Jupyter", "ML Pipelines", "Tableau", "AWS"],
+      githubUrl: "https://github.com/lafebenn/DEPLOYBonfire-Intex2026COPY",
+      liveUrl: "https://www.bonfiresanctuary.org/",
+      featured: true,
+    },
+    {
+      title: "IS 413 Full-Stack Web App",
+      description: "Six-phase full-stack build with ASP.NET MVC (C#) and React: SQLite backend, paginated data tables, server-side filtering, a React Context-powered cart, CRUD admin panel, and REST API — wired end-to-end for IS 413.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      type: "website" as ProjectType,
+      technologies: ["ASP.NET MVC", "C#", ".NET", "React", "SQLite", "REST API", "Bootstrap"],
+      liveUrl: "https://github.com/lafebenn/Mission11_Bennett",
+      featured: true,
+    },
+    {
+      title: "ML Fraud Detection Pipeline",
+      description: "End-to-end machine learning pipeline for fraud classification. Pipeline covers automated data wrangling, MLR, decision trees, ensemble methods (Random Forest, Boosting, Stacking), cross-validation, hyperparameter tuning, feature selection, and final model deployment via a live API endpoint.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+      type: "code" as ProjectType,
+      technologies: ["Python", "Scikit-learn", "Pandas", "Ensemble Methods", "ML Deployment"],
+      liveUrl: "https://github.com/lafebenn/ML-Model-IS455-PredictFraud",
+      featured: true,
+    },
+    {
+      title: "KPMG-Sponsored INTEX — 4th Place",
       description: "My team and I built this full-stack AWS site for Ella Rises with PostgreSQL, CRUD flows, dashboards, and UX-focused prototyping. Ella Rises is a non-profit organization that provides opportunities for latina young women to learn and grow in STEAM fields while simultaneously embracing their culture and building a community and supporting each other.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop", // Business/Analytics vibe
       type: "website" as ProjectType,

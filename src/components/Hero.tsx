@@ -27,7 +27,7 @@ const Hero = () => {
         {/* Status badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8 animate-fade-in backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-sm text-muted-foreground">New projects coming soon!</span>
+          <span className="text-sm text-muted-foreground">Service Delivery Consultant @ Anglepoint | Software Asset Management &amp; ITAM</span>
         </div>
 
         {/* --- NEW PROFILE PICTURE SECTION --- */}

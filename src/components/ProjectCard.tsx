@@ -44,6 +44,10 @@ const ProjectCard = ({
   featured = false,
 }: ProjectCardProps) => {
   const TypeIcon = typeIcons[type];
+  const repoUrl =
+    githubUrl ?? (liveUrl?.includes("github.com") ? liveUrl : undefined);
+  const siteUrl =
+    liveUrl && !liveUrl.includes("github.com") ? liveUrl : undefined;
 
   return (
     <article 
@@ -98,20 +102,20 @@ const ProjectCard = ({
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-3">
-          {liveUrl && (
+        <div className="flex items-center gap-3 flex-wrap">
+          {repoUrl && (
             <Button variant="outline" size="sm" asChild>
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4" />
-                Live Demo
+              <a href={repoUrl} target="_blank" rel="noopener noreferrer">
+                <Github className="w-4 h-4" />
+                GitHub
               </a>
             </Button>
           )}
-          {githubUrl && (
+          {siteUrl && (
             <Button variant="ghost" size="sm" asChild>
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4" />
-                Code
+              <a href={siteUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-4 h-4" />
+                Visit site
               </a>
             </Button>
           )}

@@ -111,3 +111,96 @@
     50% { transform: translateY(-20px); }
   }
 }
+
+/* Resume page improvements */
+.resume-section {
+  margin-bottom: 2.5rem;
+}
+
+.resume-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsl(var(--primary));
+  border-bottom: 1.5px solid hsl(var(--primary) / 0.25);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.resume-item {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid hsl(var(--border) / 0.5);
+}
+
+.resume-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.resume-item-title {
+  font-weight: 600;
+  font-size: 0.975rem;
+  color: hsl(var(--foreground));
+}
+
+.resume-item-subtitle {
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 0.1rem;
+}
+
+.resume-item-date {
+  font-size: 0.8rem;
+  color: hsl(var(--muted-foreground));
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.resume-bullet {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  padding-left: 1rem;
+  position: relative;
+}
+
+.resume-bullet::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: hsl(var(--primary) / 0.6);
+}
+
+/* Print / PDF export */
+@media print {
+  html, body { background: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header, footer, nav { display: none !important; }
+
+  .min-h-screen { min-height: auto !important; }
+  .bg-background { background: white !important; }
+  .bg-card { background: white !important; border: none !important; box-shadow: none !important; }
+
+  .text-muted-foreground { color: #444 !important; }
+  .text-foreground, h1, h2, h3 { color: #111 !important; }
+  .text-gradient { background: none !important; -webkit-text-fill-color: #111 !important; color: #111 !important; }
+
+  .border, .border-border { border-color: #ddd !important; }
+  .resume-section-title { color: #1a1a2e !important; border-color: #ccc !important; }
+  .resume-bullet::before { color: #666 !important; }
+  .shadow-soft { box-shadow: none !important; }
+
+  main { padding: 0 !important; }
+  main > div { padding: 2rem !important; border: none !important; border-radius: 0 !important; }
+
+  @page { margin: 0.5in; size: letter; }
+}
