@@ -50,9 +50,11 @@ const About = () => {
                 browser tabs.
               </p>
               <p>
-                At Anglepoint I work on software asset management (SAM) and IT asset management (ITAM)
-                engagements for Fortune 500 clients, using ServiceNow SAM Pro and Flexera One to analyze
-                Microsoft, Oracle, and IBM licensing positions.
+                At Anglepoint I support 6+ Fortune 500 engagements across software asset management
+                (SAM) and ITAM, conducting ELP analysis and entitlement reconciliation across Microsoft,
+                Oracle, IBM, Salesforce, VMware, Quest, and OpenText licensing environments using
+                ServiceNow SAM Pro and Flexera One — contributing to ~$2M in identified cost savings
+                and compliance risk across active engagements.
               </p>
               <p>
                 My work spans full-stack development (React, C#/.NET, Node.js), cloud infrastructure 

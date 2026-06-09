@@ -7,7 +7,7 @@ import { Globe, Code2, Zap, Layers } from "lucide-react";
     {
       title: "LTO Pipeline — SAM ROI Automation",
       description:
-        "Python + Streamlit pipeline that automates ROI extraction from ROAR and ELP documents for enterprise SAM engagements. Built during Anglepoint's intern competition (LTO — License to Operate), the tool replaces manual spreadsheet workflows with an automated ingestion and analysis pipeline for licensing compliance data.",
+        "Python + Streamlit pipeline automating ROI extraction from ROAR and ELP documents for enterprise SAM engagements. Reduces a 10-hour manual analysis process to under 5 minutes per engagement — a 120x efficiency gain — with potential to save 8,000+ analyst hours annually across Anglepoint's 200+ client portfolio. Built for Anglepoint's intern LTO (License to Operate) competition.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
       type: "automation" as ProjectType,

@@ -11,16 +11,16 @@ const Resume = () => {
   return (
     <>
       <Helmet>
-        <title>Resume - William Bennett | IS Student & Developer</title>
-        <meta name="description" content="Resume of William Bennett - Information Systems student skilled in full-stack development, cloud infrastructure, and data-driven systems." />
+        <title>Resume - Will Bennett | SAM/ITAM Consultant & Developer</title>
+        <meta name="description" content="Resume of Will Bennett — SAM/ITAM Consultant at Anglepoint supporting Fortune 500 clients across Microsoft, Oracle, IBM, Salesforce, and VMware licensing. Full-stack developer and BYU IS student." />
       </Helmet>
 
       <div className="min-h-screen bg-background">
         {/* Header */}
         <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border print:hidden">
           <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -60,7 +60,7 @@ const Resume = () => {
             {/* Summary */}
             <div className="mb-10">
               <p className="text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
-                Information Systems student and research assistant skilled in full-stack development, cloud infrastructure, and data-driven systems. Experienced with Python, React, SQL, AWS, Docker, and Linux. Known for troubleshooting complex issues, deploying secure web applications, and building scalable solutions with curiosity and precision.
+                SAM/ITAM consultant and full-stack developer supporting Fortune 500 clients at Anglepoint across Microsoft, Oracle, IBM, Salesforce, VMware, Quest, and OpenText licensing environments. Hands-on experience with ServiceNow SAM Pro, Flexera One, and ROAR methodology — contributing to ~$2M in identified cost savings and compliance risk across 6+ active engagements. Combines consulting depth with technical breadth: former CTO of a 10K+ user platform, co-authoring an AOM Perspectives paper, and builder of a 120x-faster SAM automation pipeline.
               </p>
             </div>
 
@@ -80,10 +80,10 @@ const Resume = () => {
                     <span className="text-foreground font-medium">GPA:</span> 3.9 / 4.00 | Dean's List Honors
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <span className="text-foreground font-medium">Leadership:</span> VP, AI for IS Club | Marriott Research Fellow | Member, Association of Information Systems
+                    <span className="text-foreground font-medium">Awards:</span> 4th Place Overall, INTEX Case Competition (KPMG Sponsored)
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <span className="text-foreground font-medium">Coursework:</span> OOP, Data Analytics (Excel, Pandas), Web Development, Databases, Cloud Infrastructure
+                    <span className="text-foreground font-medium">Leadership:</span> VP, AI for IS Club | Marriott Research Fellow | Member, Association of Information Systems
                   </p>
                 </div>
               </div>
@@ -95,62 +95,72 @@ const Resume = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-sm">
-                    <span className="text-foreground font-medium">Operating Systems:</span>{" "}
-                    <span className="text-muted-foreground">macOS, Linux (Ubuntu, VM), Windows</span>
+                    <span className="text-foreground font-medium">SAM & ITAM:</span>{" "}
+                    <span className="text-muted-foreground">ServiceNow SAM Pro, Flexera One, IBM ILMT, ROAR Methodology, ELP Analysis, Entitlement Reconciliation</span>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm">
-                    <span className="text-foreground font-medium">Networking:</span>{" "}
-                    <span className="text-muted-foreground">TCP/IP, DNS, DHCP, VPNs, routers, firewalls</span>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm">
-                    <span className="text-foreground font-medium">Scripting & Automation:</span>{" "}
-                    <span className="text-muted-foreground">PowerShell, Bash, Python</span>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm">
-                    <span className="text-foreground font-medium">Cloud & Infrastructure:</span>{" "}
-                    <span className="text-muted-foreground">AWS (S3, EC2, Elastic Beanstalk), Docker, Git, Node.js</span>
+                    <span className="text-foreground font-medium">Publisher Licensing:</span>{" "}
+                    <span className="text-muted-foreground">Microsoft M365/EA, Oracle ULA/PVU, IBM PVU/RVU, Salesforce, VMware, Quest, OpenText</span>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm">
                     <span className="text-foreground font-medium">Development:</span>{" "}
-                    <span className="text-muted-foreground">React, JavaScript, HTML/CSS, SQL, PostgreSQL, MySQL</span>
+                    <span className="text-muted-foreground">Python, C#, ASP.NET MVC, React, TypeScript, Node.js, SQL, HTML/CSS, Bash</span>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm">
-                    <span className="text-foreground font-medium">Data Visualization:</span>{" "}
-                    <span className="text-muted-foreground">Tableau, Power BI, Python, Excel</span>
+                    <span className="text-foreground font-medium">Cloud & Infrastructure:</span>{" "}
+                    <span className="text-muted-foreground">AWS (EC2, S3, Elastic Beanstalk), Docker, Linux (Ubuntu), Git</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm">
+                    <span className="text-foreground font-medium">Analytics & Data:</span>{" "}
+                    <span className="text-muted-foreground">Pandas, Scikit-learn, Tableau, Power BI, Excel (Advanced), PostgreSQL, SQLite</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm">
+                    <span className="text-foreground font-medium">Methodologies:</span>{" "}
+                    <span className="text-muted-foreground">Scrum / Agile, Jira, SDLC, CRISP-DM, Lean Process Improvement</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm">
+                    <span className="text-foreground font-medium">Other:</span>{" "}
+                    <span className="text-muted-foreground">Unity (C#), XREAL SDK, AR/MR Development, NLP / LLM Pipelines, VBA, PowerShell</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm">
+                    <span className="text-foreground font-medium">Languages:</span>{" "}
+                    <span className="text-muted-foreground">English (native), Portuguese (fluent), Spanish (conversational)</span>
                   </p>
                 </div>
               </div>
-              <p className="text-sm mt-4">
-                <span className="text-foreground font-medium">Core Strengths:</span>{" "}
-                <span className="text-muted-foreground">Troubleshooting, problem-solving, client communication, process improvement</span>
-              </p>
             </section>
 
             {/* Experience */}
             <section className="resume-section">
               <h2 className="resume-section-title">Experience</h2>
-              
+
               <div className="resume-item">
                 <div className="resume-item-header">
                   <div>
-                    <h3 className="resume-item-title">Consulting Analyst Intern</h3>
+                    <h3 className="resume-item-title">Service Delivery Consultant</h3>
                     <p className="resume-item-subtitle">Anglepoint, Lindon, UT</p>
                   </div>
                   <span className="resume-item-date">Jun 2026 – Aug 2026</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Supporting Fortune 500 enterprise clients across software asset management (SAM), IT asset management (ITAM), and cloud licensing strategy</li>
-                  <li className="resume-bullet">Analyzing software license inventories and usage data to identify compliance risks and cost optimization opportunities</li>
+                  <li className="resume-bullet">Supporting 6+ Fortune 500 client engagements across software asset management (SAM) and ITAM — conducting ELP analysis and entitlement reconciliation for Microsoft M365/EA, Oracle ULA, IBM PVU/RVU, Salesforce, VMware, Quest, and OpenText licensing environments using ServiceNow SAM Pro and Flexera One</li>
+                  <li className="resume-bullet">Applying ROAR methodology to build ROI-focused client deliverables quantifying compliance risk and optimization opportunity; contributed to identification of ~$2M in annualized cost savings and compliance exposure across active engagements</li>
+                  <li className="resume-bullet">Engineered a Python + Streamlit automation pipeline (LTO intern competition) reducing ROAR/ELP document analysis from 10 hours to under 5 minutes per engagement — a 120x efficiency gain — with potential to save 8,000+ analyst hours annually across Anglepoint's 200+ client portfolio</li>
+                  <li className="resume-bullet">Analyzed publisher-specific licensing structures (Microsoft EA true-up cycles, Oracle ULA certification triggers, IBM sub-capacity rules) to support client compliance strategy and cost optimization recommendations</li>
                 </ul>
               </div>
 
@@ -163,8 +173,8 @@ const Resume = () => {
                   <span className="resume-item-date">Jan 2026 – Present</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Built predictive models and performed statistical data analysis supporting MPA faculty research on organizational behavior and public policy effectiveness</li>
-                  <li className="resume-bullet">Presented data-driven findings directly to faculty; contributing to a co-authored Academy of Management Perspectives publication currently in progress</li>
+                  <li className="resume-bullet">Built Python/NLP pipeline to vectorize and score 295+ U.S. presidential addresses (Inaugural + State of the Union) against constitutional leadership values; outputs feeding a co-authored Academy of Management Perspectives paper in progress</li>
+                  <li className="resume-bullet">Performed statistical modeling and data analysis to support MPA faculty research on organizational behavior and public policy effectiveness; presented findings directly to faculty</li>
                   <li className="resume-bullet">Applied Scrum sprint frameworks to manage research timelines and ensure on-time delivery of analytical outputs</li>
                 </ul>
               </div>
@@ -172,15 +182,14 @@ const Resume = () => {
               <div className="resume-item">
                 <div className="resume-item-header">
                   <div>
-                    <h3 className="resume-item-title">Research Assistant</h3>
-                    <p className="resume-item-subtitle">Brigham Young University Marriott School of Business, Provo, UT</p>
+                    <h3 className="resume-item-title">Research Assistant (HCI / Mixed Reality)</h3>
+                    <p className="resume-item-subtitle">BYU Marriott School of Business, Provo, UT</p>
                   </div>
-                  <span className="resume-item-date">Oct 2025 - Present</span>
+                  <span className="resume-item-date">Oct 2025 – Present</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Engineering AR tools (Unity, XREAL SDK) merging 3D-printed models with a scalable environment for HCI research</li>
-                  <li className="resume-bullet">Assisted Professor James Gaskin in AI and technology adoption research through data cleaning and analysis</li>
-                  <li className="resume-bullet">Tested and documented web-based tools and data models used for academic research projects</li>
+                  <li className="resume-bullet">Engineering AR tools (Unity, XREAL SDK) merging 3D-printed physical models with scalable digital environments for HCI research under Prof. James Gaskin</li>
+                  <li className="resume-bullet">Conducting user testing and behavioral data analysis for AI and technology adoption studies; synthesizing findings into publication-aligned reports</li>
                 </ul>
               </div>
 
@@ -190,24 +199,25 @@ const Resume = () => {
                     <h3 className="resume-item-title">CTO / Interim CEO</h3>
                     <p className="resume-item-subtitle">GlobalHub, Provo, UT</p>
                   </div>
-                  <span className="resume-item-date">Apr 2025 - Aug 2025</span>
+                  <span className="resume-item-date">Apr 2025 – Aug 2025</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Built and deployed a production-scale React frontend for 10K+ users on AWS and Docker</li>
-                  <li className="resume-bullet">Coordinated cross-functional team to deliver conference-aligned release, improving product adoption by 40%</li>
+                  <li className="resume-bullet">Built and deployed production-scale React frontend serving 10,000+ users on AWS (EC2, S3, Elastic Beanstalk) with Docker containerization</li>
+                  <li className="resume-bullet">Led cross-functional Scrum team to deliver AOM Copenhagen conference release; drove 40% increase in product adoption</li>
+                  <li className="resume-bullet">Transitioned from CTO to Interim CEO following leadership restructuring; managed stakeholder communication and product roadmap under ambiguity</li>
                 </ul>
               </div>
 
               <div className="resume-item">
                 <div className="resume-item-header">
                   <div>
-                    <h3 className="resume-item-title">Writer/Coordinator Intern</h3>
+                    <h3 className="resume-item-title">Writer / Coordinator Intern</h3>
                     <p className="resume-item-subtitle">BYU Whitmore Global Business Center, Provo, UT</p>
                   </div>
-                  <span className="resume-item-date">Jan 2025 - Apr 2025</span>
+                  <span className="resume-item-date">Jan 2025 – Apr 2025</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Improved event engagement 120% by optimizing UX (HTML/CSS) and managing logistics for 90+ participants</li>
+                  <li className="resume-bullet">Boosted event engagement 120% by redesigning platform UX (HTML/CSS) and managing logistics for 90+ participants</li>
                 </ul>
               </div>
 
@@ -217,10 +227,10 @@ const Resume = () => {
                     <h3 className="resume-item-title">Volunteer Representative</h3>
                     <p className="resume-item-subtitle">The Church of Jesus Christ of Latter-Day Saints, Manaus, Brazil</p>
                   </div>
-                  <span className="resume-item-date">Feb 2022 - Feb 2024</span>
+                  <span className="resume-item-date">Feb 2022 – Feb 2024</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Directed 100+ volunteers across 4 regions, boosting outreach KPIs 20% with Excel automation</li>
+                  <li className="resume-bullet">Directed and trained 100+ volunteers across 4 regions in fluent Portuguese; boosted regional outreach KPIs 20% through Excel workflow automation</li>
                 </ul>
               </div>
             </section>
@@ -228,18 +238,31 @@ const Resume = () => {
             {/* Projects */}
             <section className="resume-section">
               <h2 className="resume-section-title">Projects</h2>
-              
+
               <div className="resume-item">
                 <div className="resume-item-header">
                   <div>
-                    <h3 className="resume-item-title">Leadership Values & Integrity Analysis</h3>
-                    <p className="resume-item-subtitle">Romney Institute Research, Provo, UT</p>
+                    <h3 className="resume-item-title">LTO Pipeline — SAM ROI Automation</h3>
+                    <p className="resume-item-subtitle">Anglepoint Intern Competition</p>
+                  </div>
+                  <span className="resume-item-date">Jun 2026 – Present</span>
+                </div>
+                <ul className="space-y-1 mt-2">
+                  <li className="resume-bullet">Python + Streamlit pipeline automating ROI extraction from ROAR and ELP documents; reduces 10-hour manual process to &lt;5 minutes per engagement (120x faster)</li>
+                  <li className="resume-bullet">Projected to save 8,000+ analyst hours annually across Anglepoint's 200+ client base; presented findings to firm leadership</li>
+                </ul>
+              </div>
+
+              <div className="resume-item">
+                <div className="resume-item-header">
+                  <div>
+                    <h3 className="resume-item-title">Leadership Values &amp; Integrity Analysis</h3>
+                    <p className="resume-item-subtitle">Romney Institute Research</p>
                   </div>
                   <span className="resume-item-date">Jan 2026 – Present</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Built a Python/NLP pipeline to score presidential Inaugural Addresses and State of the Union speeches against constitutional leadership values using vectorized embedding models</li>
-                  <li className="resume-bullet">Outputs contribute to a co-authored paper submitted to the Academy of Management Perspectives</li>
+                  <li className="resume-bullet">Python/NLP pipeline scoring 295+ presidential addresses against constitutional leadership values using vectorized embedding models; outputs feeding co-authored AOM Perspectives paper</li>
                 </ul>
               </div>
 
@@ -247,47 +270,34 @@ const Resume = () => {
                 <div className="resume-item-header">
                   <div>
                     <h3 className="resume-item-title">KPMG-Sponsored INTEX — 4th Place Overall</h3>
-                    <p className="resume-item-subtitle">IS Coursework, Provo, Utah</p>
+                    <p className="resume-item-subtitle">IS Coursework, Provo, UT</p>
                   </div>
-                  <span className="resume-item-date">Oct 2025 - Present</span>
+                  <span className="resume-item-date">Apr 2026</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Built a full-stack AWS web app (React, PostgreSQL, Tableau dashboard) for a non-profit serving Latina STEAM students; placed 4th in a KPMG-sponsored campus-wide case competition</li>
+                  <li className="resume-bullet">Built full-stack AWS app (React, PostgreSQL, Tableau) for a Latina STEAM non-profit; placed 4th in KPMG-sponsored campus competition against all IS teams</li>
                 </ul>
               </div>
 
               <div className="resume-item">
                 <div className="resume-item-header">
                   <div>
-                    <h3 className="resume-item-title">IS 413 Full-Stack Web Application</h3>
-                    <p className="resume-item-subtitle">IS 413 Coursework, Provo, UT</p>
+                    <h3 className="resume-item-title">Bonfire INTEX — Full-Stack + ML</h3>
+                    <p className="resume-item-subtitle">BYU Case Competition</p>
                   </div>
-                  <span className="resume-item-date">Jan 2026 – Apr 2026</span>
+                  <span className="resume-item-date">Dec 2025</span>
                 </div>
                 <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Built a six-phase full-stack app in ASP.NET MVC (C#) and React with SQLite, paginated REST API, React Context donation cart, and CRUD admin panel</li>
-                </ul>
-              </div>
-
-              <div className="resume-item">
-                <div className="resume-item-header">
-                  <div>
-                    <h3 className="resume-item-title">Secure Authentication System</h3>
-                    <p className="resume-item-subtitle">IS Coursework, Provo, Utah</p>
-                  </div>
-                  <span className="resume-item-date">Oct 2025 - Present</span>
-                </div>
-                <ul className="space-y-1 mt-2">
-                  <li className="resume-bullet">Built a login system with real authentication using PostgreSQL and encrypted password validation</li>
+                  <li className="resume-bullet">Full-stack monorepo: C# / .NET API backend, React + TypeScript frontend, PostgreSQL, Tableau dashboards, and Jupyter ML pipeline — built under competition deadline</li>
                 </ul>
               </div>
             </section>
 
             {/* Awards & Interests */}
             <section className="resume-section mb-0">
-              <h2 className="resume-section-title">Awards, Skills & Interests</h2>
+              <h2 className="resume-section-title">Additional</h2>
               <p className="text-sm text-muted-foreground">
-                IS Research Candidate | Eagle Scout, Scouts of America | Fluent in Portuguese | CA Flag Football State Champion
+                Eagle Scout, Scouts of America | CA Flag Football State Champion | Fluent in Portuguese, Conversational Spanish | Marriott Research Fellow | IS Research Candidate
               </p>
             </section>
           </div>
