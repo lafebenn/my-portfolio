@@ -52,9 +52,8 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          I build <span className="text-foreground font-medium">modern web experiences</span>, 
-          craft <span className="text-foreground font-medium">intelligent automations</span>, 
-          and bring ideas to life through code.
+          I help Fortune 500 clients with <span className="text-foreground font-medium">software asset management</span> at Anglepoint,
+          and build <span className="text-foreground font-medium">full-stack apps, data pipelines, and automations</span> through code.
         </p>
 
         {/* CTA Buttons */}
@@ -78,7 +77,7 @@ const Hero = () => {
             <Github className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
           </a>
           <a 
-            href="https://www.linkedin.com/in/will-bennettt/" 
+            href="https://www.linkedin.com/in/willbennettbyu/"
             target="_blank" 
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group"

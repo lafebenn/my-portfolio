@@ -40,7 +40,7 @@ const Contact = () => {
           </a>
           <div className="w-px h-4 bg-border" />
           <a 
-            href="https://www.linkedin.com/in/will-bennettt/" 
+            href="https://www.linkedin.com/in/willbennettbyu/"
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"

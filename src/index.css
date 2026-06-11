@@ -175,32 +175,47 @@
 }
 
 .resume-bullet::before {
-  content: "–";
+  content: "•";
   position: absolute;
   left: 0;
-  color: hsl(var(--primary) / 0.6);
+  color: hsl(var(--primary) / 0.7);
 }
 
 /* Print / PDF export */
 @media print {
-  html, body { background: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: white !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   header, footer, nav { display: none !important; }
 
+  /* Tighten everything so the resume reads as a clean, compact document */
   .min-h-screen { min-height: auto !important; }
   .bg-background { background: white !important; }
+  .resume-sheet,
   .bg-card { background: white !important; border: none !important; box-shadow: none !important; }
 
-  .text-muted-foreground { color: #444 !important; }
+  .text-muted-foreground { color: #333 !important; }
   .text-foreground, h1, h2, h3 { color: #111 !important; }
+  .text-primary { color: #1f3a5f !important; }
   .text-gradient { background: none !important; -webkit-text-fill-color: #111 !important; color: #111 !important; }
 
   .border, .border-border { border-color: #ddd !important; }
-  .resume-section-title { color: #1a1a2e !important; border-color: #ccc !important; }
-  .resume-bullet::before { color: #666 !important; }
+  .resume-section-title { color: #1f3a5f !important; border-color: #bbb !important; }
+  .resume-bullet::before { color: #1f3a5f !important; }
   .shadow-soft { box-shadow: none !important; }
 
-  main { padding: 0 !important; }
-  main > div { padding: 2rem !important; border: none !important; border-radius: 0 !important; }
+  /* Hyperlinks print as plain dark text, no underline or URL expansion */
+  a { color: #1a1a1a !important; text-decoration: none !important; }
+
+  main { padding: 0 !important; max-width: none !important; }
+  main > div { padding: 0 !important; border: none !important; border-radius: 0 !important; }
+
+  /* Compact spacing for print */
+  .resume-section { margin-bottom: 1.1rem !important; }
+  .resume-item { padding-bottom: 0.7rem !important; margin-bottom: 0.7rem !important; }
+  .resume-section-title { margin-bottom: 0.6rem !important; padding-bottom: 0.25rem !important; }
+
+  /* Never split a role/section heading across pages */
+  .resume-item, .resume-section { break-inside: avoid; page-break-inside: avoid; }
+  .resume-section-title { break-after: avoid; page-break-after: avoid; }
 
   @page { margin: 0.5in; size: letter; }
 }
