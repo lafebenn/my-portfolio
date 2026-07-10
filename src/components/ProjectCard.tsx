@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Code2, Globe, Zap } from "lucide-react";
+import { ExternalLink, Github, Code2, Globe, Zap, Gamepad2 } from "lucide-react";
 
 export type ProjectType = "website" | "code" | "automation";
 
@@ -12,6 +12,8 @@ interface ProjectCardProps {
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
+  /** Internal link to a playable app hosted on this site (e.g. /games/mahjong). */
+  playUrl?: string;
   featured?: boolean;
 }
 
@@ -41,6 +43,7 @@ const ProjectCard = ({
   technologies,
   liveUrl,
   githubUrl,
+  playUrl,
   featured = false,
 }: ProjectCardProps) => {
   const TypeIcon = typeIcons[type];
@@ -103,6 +106,14 @@ const ProjectCard = ({
 
         {/* Links */}
         <div className="flex items-center gap-3 flex-wrap">
+          {playUrl && (
+            <Button variant="default" size="sm" asChild>
+              <a href={playUrl}>
+                <Gamepad2 className="w-4 h-4" />
+                Play Game
+              </a>
+            </Button>
+          )}
           {repoUrl && (
             <Button variant="outline" size="sm" asChild>
               <a href={repoUrl} target="_blank" rel="noopener noreferrer">

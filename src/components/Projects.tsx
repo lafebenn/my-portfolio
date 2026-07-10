@@ -5,6 +5,18 @@ import { Globe, Code2, Zap, Layers } from "lucide-react";
 
   const projects = [
     {
+      title: "American Mahjong — Solo vs. 3 AI Bots",
+      description:
+        "A playable American Mah Jongg game built with TanStack Start + React and a from-scratch rules engine encoding the full official 2026 NMJL card. Features the Charleston tile-passing phase, exposures, jokers, and three AI opponents that draw, discard, and call — all running client-side on a luxury emerald-and-gold table. Deployed as a static app on this site.",
+      image:
+        "https://images.unsplash.com/photo-1606166325683-e6deb697d301?w=800&auto=format&fit=crop",
+      type: "code" as ProjectType,
+      technologies: ["React", "TanStack Start", "TypeScript", "Tailwind CSS", "Framer Motion", "Game AI"],
+      playUrl: "/games/mahjong",
+      githubUrl: "https://github.com/lafebenn/emerald-ace-mahjong",
+      featured: true,
+    },
+    {
       title: "LTO Pipeline — SAM ROI Automation",
       description:
         "Python + Streamlit pipeline automating ROI extraction from ROAR and ELP documents for enterprise SAM engagements. Reduces a 10-hour manual analysis process to under 5 minutes per engagement — a 120x efficiency gain — with potential to save 8,000+ analyst hours annually across Anglepoint's 200+ client portfolio. Built for Anglepoint's intern LTO (License to Operate) competition.",
