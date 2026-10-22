@@ -4,40 +4,40 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const skills: { label: string; items: string }[] = [
-  { label: "SAM & ITAM", items: "ServiceNow SAM Pro, Flexera One, IBM ILMT, ROAR Methodology, ELP Analysis, Entitlement Reconciliation" },
-  { label: "Publisher Licensing", items: "Microsoft M365/EA, Oracle ULA/PVU, IBM PVU/RVU, Salesforce, VMware, Quest, OpenText" },
-  { label: "Development & Cloud", items: "Python, C#, ASP.NET MVC, React, TypeScript, SQL, AWS (EC2/S3), Docker, Linux, Git" },
-  { label: "Analytics & Methods", items: "Pandas, Scikit-learn, Tableau, Power BI, Excel, NLP/LLM Pipelines, Scrum/Agile, Jira" },
+  { label: "Customer & Delivery", items: "Enterprise customer support, stakeholder communication, root-cause analysis, product adoption, Agile/Scrum" },
+  { label: "Enterprise SaaS Platforms", items: "ServiceNow SAM Pro, Flexera One, entitlement reconciliation, ELP analysis, data mapping, IBM ILMT" },
+  { label: "AI & Data Tooling", items: "LLM classification pipelines, prompt-based automation, sentence embeddings, Python (Pandas, Scikit-learn)" },
+  { label: "Development & Cloud", items: "Python, C#, ASP.NET MVC, React, TypeScript, SQL, AWS (EC2/S3), Docker, Git" },
+  { label: "Analysis & Reporting", items: "Excel (Advanced), PowerPoint, SharePoint, Tableau, Power BI, SQL, technical documentation" },
   { label: "Languages", items: "English (native), Portuguese (fluent), Spanish (conversational)" },
 ];
 
 const experience: { title: string; org: string; date: string; bullets: string[] }[] = [
   {
+    title: "Technical Portfolio Advisor",
+    org: "BYU Marriott School of Business, Provo, UT",
+    date: "Sep 2026 – Present",
+    bullets: [
+      "Advise students on technical portfolio development within BYU's 600+ student Information Systems program.",
+      "Manage the program's technical project portfolio while building internal tooling and advising faculty.",
+    ],
+  },
+  {
     title: "Service Delivery Consultant",
     org: "Anglepoint, Lindon, UT",
-    date: "Jun 2026 – Aug 2026",
+    date: "May 2026 – Aug 2026",
     bullets: [
-      "~$2M in licensing exposure identified across active client engagements.",
-      "6+ Fortune 500 clients supported with ELP analysis and entitlement reconciliation.",
-      "7 publisher environments managed in ServiceNow SAM Pro and Flexera One, including Microsoft, Oracle, and IBM.",
-      "120x faster ROAR and ELP analysis from a Python and Streamlit pipeline, cutting 10 hours to under 5 minutes.",
+      "99% faster data processing from a Python and Streamlit pipeline, cutting 10 hours to under 5 minutes.",
+      "$2M a year in savings identified by automating licensing analysis across 10+ Fortune 500 engagements.",
+      "7 publisher environments supported in ServiceNow SAM Pro and Flexera One, removing data-quality blockers.",
     ],
   },
   {
     title: "Research Associate",
     org: "Romney Institute, Brigham Young University, Provo, UT",
-    date: "Jan 2026 – Present",
+    date: "Jan 2026 – May 2026",
     bullets: [
-      "295+ presidential addresses scored by a Python NLP pipeline for a co-authored AOM Perspectives paper.",
-      "3+ faculty research projects supported with statistical modeling and data analysis.",
-    ],
-  },
-  {
-    title: "Research Assistant, HCI and Mixed Reality",
-    org: "BYU Marriott School of Business, Provo, UT",
-    date: "Oct 2025 – Present",
-    bullets: [
-      "2+ AI adoption studies supported with AR tools built in Unity and the XREAL SDK.",
+      "295+ documents scored in 10 hours via AI classification, replacing 6 weeks of manual work for a co-authored paper.",
     ],
   },
   {
@@ -45,8 +45,9 @@ const experience: { title: string; org: string; date: string; bullets: string[] 
     org: "GlobalHub, Provo, UT",
     date: "Apr 2025 – Aug 2025",
     bullets: [
-      "10,000+ users served by a production React frontend deployed on AWS (EC2, S3) with Docker.",
-      "40% month-over-month adoption growth after launch, from leading a cross-functional Scrum team to the AOM Copenhagen conference release.",
+      "40% increase in product adoption from leading a cross-functional team through a customer-facing release.",
+      "10,000+ users served by a production app deployed on AWS and Docker.",
+      "Shipped 8 features as 1 of 2 engineers, managing a 15-person team and liaising with 5 cofounders and partners.",
     ],
   },
   {
@@ -54,27 +55,19 @@ const experience: { title: string; org: string; date: string; bullets: string[] 
     org: "Church of Jesus Christ of Latter-day Saints, Manaus, Brazil",
     date: "Feb 2022 – Feb 2024",
     bullets: [
-      "100+ volunteers led and trained across 4 regions in fluent Portuguese.",
-      "20% increase in regional outreach KPIs from Excel workflow automation.",
+      "100+ volunteers led and trained across 4 regions, all in fluent Portuguese.",
+      "20% increase in outreach KPIs from replacing manual tracking with an Excel system.",
     ],
   },
 ];
 
 const projects: { title: string; org: string; date: string; bullets: string[] }[] = [
   {
-    title: "KPMG-Sponsored INTEX, 4th Place Overall",
+    title: "KPMG-Sponsored INTEX, 4th of 70 Teams",
     org: "IS Coursework, Provo, UT",
     date: "Apr 2026",
     bullets: [
-      "Built the PostgreSQL schema and Tableau dashboards for a full-stack AWS app serving a Latina STEAM non-profit; team placed 4th of 40+.",
-    ],
-  },
-  {
-    title: "Bonfire INTEX, Full-Stack and ML",
-    org: "BYU Case Competition",
-    date: "Dec 2025",
-    bullets: [
-      "C#/.NET API, React and TypeScript frontend, PostgreSQL, and a Jupyter ML pipeline across 5+ integrated components.",
+      "Built a full-stack AWS app (React, PostgreSQL, Tableau) in one week on a 2,000-record dataset for a nonprofit client.",
     ],
   },
 ];
@@ -102,7 +95,7 @@ const Resume = () => {
     <>
       <Helmet>
         <title>Resume — William Bennett | BYU Information Systems, expected April 2027</title>
-        <meta name="description" content="Resume of William Bennett — BYU Information Systems student (expected April 2027) targeting consulting and product management roles. Summer 2026 SAM/ITAM consultant at Anglepoint across Microsoft, Oracle and IBM licensing." />
+        <meta name="description" content="Resume of William Bennett — BYU Information Systems student (expected April 2027) with an emphasis in tech consulting. Learns new domains quickly and has taken products from an idea to adoption at scale." />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -134,7 +127,7 @@ const Resume = () => {
             {/* Name & Contact */}
             <div className="text-center mb-8 pb-6 border-b border-border">
               <h1 className="text-3xl md:text-4xl font-bold mb-1">William L. Bennett</h1>
-              <p className="text-sm text-primary font-medium mb-4">BYU Information Systems, expected April 2027 &nbsp;&bull;&nbsp; Targeting consulting &amp; product management roles</p>
+              <p className="text-sm text-primary font-medium mb-4">BYU Information Systems, emphasis in tech consulting &nbsp;&bull;&nbsp; Expected April 2027</p>
               <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
                 <a href="tel:+19496832483" className="flex items-center gap-1.5 hover:text-accent transition-colors">
                   <Phone className="w-4 h-4" />
@@ -158,7 +151,7 @@ const Resume = () => {
             {/* Summary */}
             <div className="mb-8">
               <p className="text-sm text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto">
-                BYU Information Systems student (expected April 2027) targeting consulting and product management roles. Spent summer 2026 as a SAM and ITAM consultant at Anglepoint, serving Fortune 500 clients across seven publisher licensing environments in ServiceNow SAM Pro, Flexera One, and ROAR methodology. Former CTO of a 10,000-user platform and co-author of an Academy of Management Perspectives paper in progress.
+                Customer-facing technical problem solver who helps enterprise teams get more out of the platforms they already own. Supported Fortune 500 clients across 7 publisher environments in ServiceNow SAM Pro and Flexera One, tracing root causes when platform data went wrong, and built a Python tool that cut a 10-hour analysis to under 5 minutes. Comfortable translating between technical teams and non-technical stakeholders.
               </p>
             </div>
 
@@ -194,16 +187,13 @@ const Resume = () => {
                 <div className="resume-item-header">
                   <div>
                     <h3 className="resume-item-title">Brigham Young University, Marriott School of Business</h3>
-                    <p className="resume-item-subtitle">B.S. Information Systems, Minor in Healthcare Leadership</p>
+                    <p className="resume-item-subtitle">B.S. Information Systems, Emphasis in Tech Consulting</p>
                   </div>
                   <span className="resume-item-date">Expected Apr 2027</span>
                 </div>
                 <div className="space-y-1 mt-2">
                   <p className="text-sm text-muted-foreground">
-                    <span className="text-foreground font-medium">GPA:</span> 3.9 / 4.0, Dean&apos;s List Honors
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="text-foreground font-medium">Awards:</span> 4th Place, INTEX Case Competition (KPMG Sponsored)
+                    <span className="text-foreground font-medium">GPA:</span> 3.65 cumulative / 3.9 major, Dean&apos;s List
                   </p>
                   <p className="text-sm text-muted-foreground">
                     <span className="text-foreground font-medium">Leadership:</span> VP, AI for IS Club; Marriott Research Fellow; Member, Association of Information Systems
@@ -216,7 +206,7 @@ const Resume = () => {
             <section className="resume-section mb-0">
               <h2 className="resume-section-title">Additional</h2>
               <p className="text-sm text-muted-foreground">
-                Eagle Scout, Scouts of America &nbsp;&bull;&nbsp; California Flag Football State Champion &nbsp;&bull;&nbsp; Marriott Research Fellow
+                Eagle Scout, Scouts of America &nbsp;&bull;&nbsp; California Flag Football State Champion
               </p>
             </section>
           </div>

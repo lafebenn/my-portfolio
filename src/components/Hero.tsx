@@ -77,10 +77,11 @@ const Hero = () => {
             className="text-base sm:text-xl text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0 animate-fade-in"
             style={{ animationDelay: "0.15s" }}
           >
-            I build{" "}
-            <span className="text-foreground font-medium">
-              full-stack apps, data pipelines, and automations
-            </span>, and I can take a product from the idea to the people using it.
+            I&apos;ve taught myself how to{" "}
+            <span className="text-foreground font-medium">learn anything efficiently</span>, and
+            I&apos;ve taken multiple products from an idea to adoption at scale. Tech consulting
+            is where that shows up: I learn the domain, then help the team get more out of what
+            they already have.
           </p>
 
           <div

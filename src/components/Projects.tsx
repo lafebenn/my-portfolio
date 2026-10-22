@@ -81,7 +81,7 @@ const projects = [
   {
     title: "KPMG-Sponsored INTEX — 4th Place",
     description:
-      "Site and data work for Ella Rises, a STEAM nonprofit. 4th of 40+ in a KPMG-sponsored competition.",
+      "Site and data work for Ella Rises, a STEAM nonprofit. 4th of 70 teams in a KPMG-sponsored competition.",
     type: "website" as ProjectType,
     technologies: ["PostgreSQL", "Tableau", "AWS", "Python"],
     githubUrl: "https://github.com/micdai000/INTEX",
@@ -121,7 +121,7 @@ const Projects = () => {
             <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ten projects, every one with a working link. What it does, what it is
+            Learned on the way, then used for real. What it does, what it is
             built on, and what came of it.
           </p>
         </div>

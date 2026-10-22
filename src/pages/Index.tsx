@@ -14,7 +14,7 @@ const Index = () => {
           disagree. */}
       <Helmet>
         <title>William Bennett | BYU Information Systems, expected April 2027</title>
-        <meta name="description" content="William Bennett — BYU Information Systems student (expected April 2027) targeting consulting and product management roles. Summer 2026 Service Delivery Consultant at Anglepoint, working in software asset management and ITAM. Projects in Python, React, C#/.NET, AWS and ServiceNow." />
+        <meta name="description" content="William Bennett — BYU Information Systems student (expected April 2027) targeting consulting and product management roles. Learns new domains quickly and has taken multiple products from an idea to adoption at scale." />
       </Helmet>
       
       <div className="min-h-screen bg-background">

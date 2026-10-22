@@ -3,20 +3,28 @@ import FadeContent from "@/components/bits/FadeContent/FadeContent";
 
 const skillCategories = [
   {
-    name: "SAM & product",
-    skills: ["ServiceNow SAM Pro", "Flexera One", "IBM ILMT", "Jira", "Scrum / Agile"],
+    name: "Customer & delivery",
+    skills: ["Enterprise customer support", "Stakeholder communication", "Root-cause analysis", "Product adoption", "Agile / Scrum"],
+  },
+  {
+    name: "Enterprise platforms",
+    skills: ["ServiceNow SAM Pro", "Flexera One", "Entitlement reconciliation", "ELP analysis", "IBM ILMT"],
+  },
+  {
+    name: "AI & data",
+    skills: ["LLM classification", "Prompt-based automation", "Sentence embeddings", "Pandas", "Scikit-learn"],
+  },
+  {
+    name: "Development & cloud",
+    skills: ["Python", "C#", "ASP.NET MVC", "React", "TypeScript", "SQL", "AWS", "Docker", "Git"],
+  },
+  {
+    name: "Analysis & reporting",
+    skills: ["Excel", "PowerPoint", "Tableau", "Power BI", "Technical documentation"],
   },
   {
     name: "Languages",
-    skills: ["Python", "TypeScript", "C#", "SQL"],
-  },
-  {
-    name: "Engineering",
-    skills: ["React", ".NET", "AWS", "Docker", "PostgreSQL"],
-  },
-  {
-    name: "Data",
-    skills: ["Pandas", "Scikit-learn", "Tableau", "Power BI"],
+    skills: ["English", "Portuguese", "Spanish"],
   },
 ];
 
@@ -34,9 +42,10 @@ const About = () => {
               Now
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Information Systems at BYU, expected April 2027. I&apos;m targeting{" "}
-              <span className="text-foreground font-medium">consulting and product management</span>
-              , keeping a 3.9 GPA, and shipping things while I&apos;m still in school.
+              Information Systems at BYU, expected April 2027, with an emphasis in{" "}
+              <span className="text-foreground font-medium">tech consulting</span>. Same pattern
+              as the work: I learn it, then I use it. 3.9 major GPA, and I&apos;m still shipping
+              while I&apos;m in school.
             </p>
           </div>
 
@@ -58,12 +67,15 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-6">Work</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-2">Work</h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            Real clients and real users. I picked up the domain, then put it to work.
+          </p>
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="rounded-xl border border-border/50 bg-gradient-card p-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Anglepoint</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Service Delivery Consultant, summer 2026. SAM and ITAM for Fortune 500 clients — about $2M in identified licensing exposure.
+                Service Delivery Consultant, summer 2026. Built an agentic analysis pipeline that cut a 10-hour licensing review to under 5 minutes across Fortune 500 engagements.
               </p>
             </div>
             <div className="rounded-xl border border-border/50 bg-gradient-card p-5">
@@ -88,10 +100,10 @@ const About = () => {
               Two years in Manaus, Brazil — fluent in Portuguese, once on local TV for being comically pale, came home with a parasite as a souvenir.
             </p>
             <p>
-              Eagle Scout (campfire <em>and</em> AWS deploys) and a California flag football state champion, which I bring up at every opportunity.
+              Eagle Scout at 14, and a California flag football state champion. I like nights around a fire and days at mountain lakes or the beach.
             </p>
             <p>
-              Trails, a court, or the kitchen trying to out-cook yesterday. Deep in the Cosmere — Stormlight opinions welcome. I know everyone at the party and will still end up in the corner petting the dog.
+              The kitchen, trying to out-cook yesterday. Deep in the Cosmere — Stormlight opinions welcome. I know everyone at the party and will still end up in the corner petting the dog.
             </p>
           </div>
         </div>
