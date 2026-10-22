@@ -1,104 +1,177 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
+import BlurText from "@/components/bits/BlurText/BlurText";
+import ClientDarkVeil from "@/components/bits/DarkVeil/ClientDarkVeil";
+
+const contactLinkClass =
+  "inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group text-sm";
+const contactTextClass =
+  "text-muted-foreground group-hover:text-foreground transition-colors";
 
 const Hero = () => {
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
-      {/* Background elements */}
+    <section className="min-h-screen relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }} />
-      
-      {/* Grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }}
-      />
+      <div className="absolute inset-0 opacity-15">
+        <ClientDarkVeil
+          hueShift={210}
+          noiseIntensity={0.02}
+          speed={0.2}
+          warpAmount={0.08}
+          resolutionScale={1}
+        />
+      </div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
-        {/* Status badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8 animate-fade-in backdrop-blur-sm">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-sm text-muted-foreground">Service Delivery Consultant @ Anglepoint | Software Asset Management &amp; ITAM</span>
+      <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-screen grid lg:grid-cols-[7fr_3fr] gap-10 lg:gap-12 items-center pt-24 pb-20 lg:py-0">
+        <div className="text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-5 animate-fade-in backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-sm text-muted-foreground">
+              Targeting consulting &amp; product management roles
+            </span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.35rem] font-bold mb-3 leading-tight animate-fade-in">
+            Hi, I&apos;m{" "}
+            {reduceMotion ? (
+              <span className="text-gradient">William Bennett</span>
+            ) : (
+              <BlurText
+                as="span"
+                text="William Bennett"
+                className="text-gradient"
+                animateBy="words"
+                delay={80}
+                stepDuration={0.28}
+                direction="top"
+              />
+            )}
+          </h1>
+
+          <p
+            className="text-base sm:text-lg text-foreground font-medium mb-3 animate-fade-in"
+            style={{ animationDelay: "0.1s" }}
+          >
+            BYU Information Systems, expected April 2027
+          </p>
+
+          <p
+            className="text-sm text-primary mb-5 animate-fade-in"
+            style={{ animationDelay: "0.12s" }}
+          >
+            10,000+ users in production
+          </p>
+
+          <p
+            className="text-base sm:text-xl text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0 animate-fade-in"
+            style={{ animationDelay: "0.15s" }}
+          >
+            I build{" "}
+            <span className="text-foreground font-medium">
+              full-stack apps, data pipelines, and automations
+            </span>, and I can take a product from the idea to the people using it.
+          </p>
+
+          <div
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-7 animate-fade-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <a href="mailto:lafebenn@byu.edu" className={contactLinkClass}>
+              <Mail
+                className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors"
+                aria-hidden="true"
+              />
+              <span className={contactTextClass}>lafebenn@byu.edu</span>
+            </a>
+            <a
+              href="https://github.com/lafebenn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={contactLinkClass}
+            >
+              <Github
+                className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors"
+                aria-hidden="true"
+              />
+              <span className={`${contactTextClass} hidden sm:inline`}>github.com/lafebenn</span>
+              <span className={`${contactTextClass} sm:hidden`}>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/willbennettbyu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={contactLinkClass}
+            >
+              <Linkedin
+                className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors"
+                aria-hidden="true"
+              />
+              <span className={`${contactTextClass} hidden sm:inline`}>
+                linkedin.com/in/willbennettbyu
+              </span>
+              <span className={`${contactTextClass} sm:hidden`}>LinkedIn</span>
+            </a>
+          </div>
+
+          <div
+            className="flex flex-row items-center justify-center lg:justify-start gap-3 animate-fade-in"
+            style={{ animationDelay: "0.25s" }}
+          >
+            <Button variant="default" size="lg" onClick={scrollToProjects}>
+              View My Work
+            </Button>
+            <Button variant="glass" size="lg" asChild>
+              <a href="#contact">Get In Touch</a>
+            </Button>
+          </div>
         </div>
 
-        {/* --- NEW PROFILE PICTURE SECTION --- */}
-        <div className="mb-6 animate-fade-in flex justify-center" style={{ animationDelay: "0.05s" }}>
-            <div className="relative w-40 h-40">
-                {/* Image */}
-                <img 
-                    src="/profile-pic.jpg" 
-                    alt="William Bennett" 
-                    className="w-full h-full rounded-full object-cover border-4 border-secondary/50 shadow-lg"
-                />
-                {/* Optional Glow Effect behind image */}
-                <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl -z-10" />
+        <div className="hidden lg:flex justify-end animate-fade-in" style={{ animationDelay: "0.12s" }}>
+          <div className="relative w-full max-w-[420px]">
+            <div className="absolute -inset-6 rounded-3xl bg-primary/15 blur-3xl pointer-events-none" />
+            <div className="relative rounded-2xl overflow-hidden border border-border/50">
+              <img
+                src="/headshot-studio.png"
+                alt="William Bennett"
+                width={682}
+                height={1024}
+                className="w-full aspect-[3/4] object-cover object-[20%_top]"
+              />
+              <div className="absolute inset-0 hero-portrait-fade pointer-events-none" />
             </div>
-        </div>
-        {/* ----------------------------------- */}
-
-        {/* Main heading */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          Hi, I'm <span className="text-gradient">William Bennett</span>
-        </h1>
-
-        {/* Subtitle */}
-        <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          I help Fortune 500 clients with <span className="text-foreground font-medium">software asset management</span> at Anglepoint,
-          and build <span className="text-foreground font-medium">full-stack apps, data pipelines, and automations</span> through code.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          <Button variant="hero" size="lg" onClick={scrollToProjects}>
-            View My Work
-          </Button>
-          <Button variant="glass" size="lg" asChild>
-            <a href="#contact">Get In Touch</a>
-          </Button>
+          </div>
         </div>
 
-        {/* Social links */}
-        <div className="flex items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <a 
-            href="https://github.com/lafebenn" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group"
-          >
-            <Github className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/willbennettbyu/"
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group"
-          >
-            <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-          </a>
-          <a 
-            href="mailto:willbennett2003@gmail.com"
-            className="p-3 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group"
-          >
-            <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-          </a>
+        <div className="lg:hidden mx-auto w-full max-w-sm animate-fade-in" style={{ animationDelay: "0.12s" }}>
+          <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-[0_0_60px_-20px_hsl(var(--primary)/0.45)]">
+            <img
+              src="/headshot-studio.png"
+              alt="William Bennett"
+              width={682}
+              height={1024}
+              className="w-full aspect-[3/4] object-cover object-top"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <button 
+      <button
         onClick={scrollToProjects}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float cursor-pointer"
+        aria-label="Scroll to projects"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float cursor-pointer z-10 hidden lg:block"
       >
-        <ArrowDown className="w-6 h-6 text-muted-foreground" />
+        <ArrowDown className="w-6 h-6 text-muted-foreground" aria-hidden="true" />
       </button>
     </section>
   );

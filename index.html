@@ -4,28 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="w50DMhzJgVV4QhbCfhKBIHVQGHUGbqSfK9WRsIL8DdY" />
-    <title>Will Bennett's Portfolio</title>
-    <meta name="description" content="Portfolio of Will Bennett — SAM/ITAM Consultant at Anglepoint, full-stack developer, and BYU Information Systems student. Projects in Python, React, AWS, ServiceNow, and enterprise software licensing." />
-    <meta name="author" content="Will Bennett" />
 
-    <meta property="og:title" content="Will Bennett's Portfolio" />
-    <meta property="og:description" content="Portfolio of Will Bennett — SAM/ITAM Consultant at Anglepoint, full-stack developer, and BYU Information Systems student. Projects in Python, React, AWS, ServiceNow, and enterprise software licensing." />
+    <!--
+      Canonical host is the bare domain (see public/CNAME). Every absolute URL
+      below must match it — a www/bare mismatch is why link previews silently
+      fail to load the image.
+    -->
+    <link rel="canonical" href="https://willbennett.org/" />
+
+    <title>William Bennett | BYU Information Systems, expected April 2027</title>
+    <meta name="description" content="William Bennett — BYU Information Systems student (expected April 2027) targeting consulting and product management roles. Summer 2026 Service Delivery Consultant at Anglepoint, working in software asset management and ITAM. Projects in Python, React, C#/.NET, AWS and ServiceNow." />
+    <meta name="author" content="William Bennett" />
+
+    <meta property="og:title" content="William Bennett | BYU Information Systems, expected April 2027" />
+    <meta property="og:description" content="BYU Information Systems student targeting consulting and product management roles. Summer 2026 Service Delivery Consultant at Anglepoint. Ten projects in Python, React, C#/.NET and AWS, every one with a working link." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.willbennett.org/profile-pic.jpg" />
-
-    <meta property="og:image" content="https://www.willbennett.org/profile-pic.jpg" />
+    <meta property="og:url" content="https://willbennett.org/" />
+    <meta property="og:image" content="https://willbennett.org/profile-pic.jpg" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="400" />
+    <meta property="og:image:alt" content="Portrait of William Bennett" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="None yet..." />
-    <meta name="twitter:image" content="https://www.willbennett.org/profile-pic.jpg" />
+    <!--
+      "summary", not "summary_large_image": profile-pic.jpg is 400x400. A large
+      image card expects roughly 2:1 at 1200x628 and will crop or fall back.
+      Swap this back if a proper wide image is ever added.
+    -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://willbennett.org/profile-pic.jpg" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/profile-pic.jpg" />
 
     <!-- Plausible Analytics -->
     <script defer data-domain="willbennett.org" src="https://plausible.io/js/script.js"></script>
   </head>
 
   <body>
+    <!--
+      `npm run build` runs scripts/prerender.mjs after the Vite build, which
+      replaces the contents of #root with real server-rendered HTML. That is what
+      LinkedIn's preview scraper, Slack/iMessage unfurls, and JS-less applicant
+      tracking systems read. The build FAILS if the name and role are missing
+      from the output, so this file staying empty is not a silent failure mode.
+    -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

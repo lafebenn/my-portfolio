@@ -7,14 +7,18 @@ export type ProjectType = "website" | "code" | "automation";
 interface ProjectCardProps {
   title: string;
   description: string;
-  image?: string;
   type: ProjectType;
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
   /** Internal link to a playable app hosted on this site (e.g. /games/mahjong). */
   playUrl?: string;
-  featured?: boolean;
+  /**
+   * Shown in the links row. Use this to explain, in one line, why a card has no
+   * repo link. A card that says why there is no link is credible; a card with a
+   * link that 404s is not.
+   */
+  linkNote?: string;
 }
 
 const typeIcons = {
@@ -38,13 +42,12 @@ const typeLabels = {
 const ProjectCard = ({
   title,
   description,
-  image,
   type,
   technologies,
   liveUrl,
   githubUrl,
   playUrl,
-  featured = false,
+  linkNote,
 }: ProjectCardProps) => {
   const TypeIcon = typeIcons[type];
   const repoUrl =
@@ -53,36 +56,15 @@ const ProjectCard = ({
     liveUrl && !liveUrl.includes("github.com") ? liveUrl : undefined;
 
   return (
-    <article 
-      className={`group relative bg-gradient-card rounded-xl border border-border/50 overflow-hidden transition-all duration-500 hover:border-border hover:glow-primary ${
-        featured ? "md:col-span-2 md:row-span-2" : ""
-      }`}
-    >
-      {/* Image */}
-      {image && (
-        <div className="relative aspect-video overflow-hidden">
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-        </div>
-      )}
-
+    <article className="group relative h-full flex flex-col bg-gradient-card rounded-xl border border-border/50 overflow-hidden transition-all duration-500 hover:border-border hover:glow-primary">
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         {/* Type badge */}
         <div className="flex items-center gap-2 mb-4">
           <Badge variant={typeBadgeVariants[type]} className="flex items-center gap-1.5">
-            <TypeIcon className="w-3 h-3" />
+            <TypeIcon className="w-3 h-3" aria-hidden="true" />
             {typeLabels[type]}
           </Badge>
-          {featured && (
-            <Badge variant="outline" className="border-primary/30 text-primary">
-              Featured
-            </Badge>
-          )}
         </div>
 
         {/* Title */}
@@ -90,8 +72,7 @@ const ProjectCard = ({
           {title}
         </h3>
 
-        {/* Description */}
-        <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
           {description}
         </p>
 
@@ -104,31 +85,46 @@ const ProjectCard = ({
           ))}
         </div>
 
-        {/* Links */}
-        <div className="flex items-center gap-3 flex-wrap">
+        {/* Links. Every link carries the project name in its accessible name —
+            a screen-reader user listing links should not hear "GitHub" ten
+            times with no way to tell the projects apart. */}
+        <div className="flex items-center gap-3 flex-wrap mt-auto">
           {playUrl && (
             <Button variant="default" size="sm" asChild>
-              <a href={playUrl}>
-                <Gamepad2 className="w-4 h-4" />
+              <a href={playUrl} aria-label={`Play ${title}`}>
+                <Gamepad2 className="w-4 h-4" aria-hidden="true" />
                 Play Game
               </a>
             </Button>
           )}
           {repoUrl && (
             <Button variant="outline" size="sm" asChild>
-              <a href={repoUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4" />
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${title} source code on GitHub (opens in a new tab)`}
+              >
+                <Github className="w-4 h-4" aria-hidden="true" />
                 GitHub
               </a>
             </Button>
           )}
           {siteUrl && (
             <Button variant="ghost" size="sm" asChild>
-              <a href={siteUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4" />
+              <a
+                href={siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit the live ${title} site (opens in a new tab)`}
+              >
+                <ExternalLink className="w-4 h-4" aria-hidden="true" />
                 Visit site
               </a>
             </Button>
+          )}
+          {linkNote && (
+            <p className="text-xs text-muted-foreground italic">{linkNote}</p>
           )}
         </div>
       </div>

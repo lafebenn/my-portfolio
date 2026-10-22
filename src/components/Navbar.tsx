@@ -45,7 +45,7 @@ const Navbar = () => {
             <img 
               src="/profile-pic.jpg"
               alt="William Bennett" 
-              className="h-8 w-8 rounded-full object-cover shadow-sm group-hover:ring-2 ring-accent transition-all"
+              className="h-8 w-8 rounded-full object-cover shadow-sm group-hover:ring-2 ring-primary/60 transition-all"
             />
             <span>
               <span className="text-gradient">William Bennett.</span>
@@ -69,22 +69,24 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden p-2 -mr-2 text-muted-foreground hover:text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {isMobileMenuOpen ? (
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" aria-hidden="true" />
           ) : (
-            <Menu className="w-5 h-5" />
+            <Menu className="w-5 h-5" aria-hidden="true" />
           )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border">
+        <div id="mobile-menu" className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border">
           <div className="px-6 py-6 space-y-4">
             {isHomePage && navLinks.map(({ label, href }) => (
               <a

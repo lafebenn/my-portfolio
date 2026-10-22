@@ -2,116 +2,100 @@ import { useState } from "react";
 import ProjectCard, { ProjectType } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
 import { Globe, Code2, Zap, Layers } from "lucide-react";
+import FadeContent from "@/components/bits/FadeContent/FadeContent";
+import SpotlightCard from "@/components/bits/SpotlightCard/SpotlightCard";
 
-  const projects = [
-    {
-      title: "American Mahjong — Solo vs. 3 AI Bots",
-      description:
-        "A playable American Mah Jongg game built with TanStack Start + React and a from-scratch rules engine encoding the full official 2026 NMJL card. Features the Charleston tile-passing phase, exposures, jokers, and three AI opponents that draw, discard, and call — all running client-side on a luxury emerald-and-gold table. Deployed as a static app on this site.",
-      image:
-        "https://images.unsplash.com/photo-1606166325683-e6deb697d301?w=800&auto=format&fit=crop",
-      type: "code" as ProjectType,
-      technologies: ["React", "TanStack Start", "TypeScript", "Tailwind CSS", "Framer Motion", "Game AI"],
-      playUrl: "/games/mahjong",
-      githubUrl: "https://github.com/lafebenn/emerald-ace-mahjong",
-      featured: true,
-    },
-    {
-      title: "LTO Pipeline — SAM ROI Automation",
-      description:
-        "Python + Streamlit pipeline automating ROI extraction from ROAR and ELP documents for enterprise SAM engagements. Reduces a 10-hour manual analysis process to under 5 minutes per engagement — a 120x efficiency gain — with potential to save 8,000+ analyst hours annually across Anglepoint's 200+ client portfolio. Built for Anglepoint's intern LTO (License to Operate) competition.",
-      image:
-        "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&auto=format&fit=crop",
-      type: "automation" as ProjectType,
-      technologies: ["Python", "Streamlit", "Pandas", "SAM", "ITAM", "ROAR Methodology"],
-      // githubUrl: "",  ← add after competition concludes
-      featured: true,
-    },
-    {
-      title: "Constitutional Leadership Audit",
-      description:
-        "Multi-method NLP research pipeline for the Romney Institute of Public Service and Ethics. Analyzed every U.S. presidential Inaugural Address and State of the Union paragraph-by-paragraph against Rosenbloom's Three Pillars of constitutional leadership — using LLM classification (OpenAI + Anthropic), vectorized sentence embeddings, and custom scoring rubrics. Outputs feeding a co-authored Academy of Management Perspectives paper in progress.",
-      image: "https://images.unsplash.com/photo-1681487414316-ff3306bbbb2e?w=800&auto=format&fit=crop",
-      type: "code" as ProjectType,
-      technologies: ["Python", "NLP", "LLM Classification", "Embeddings", "Pandas", "OpenAI API", "Research"],
-      liveUrl: "https://github.com/lafebenn/Leadership-Values-and-Integrity-Analysis",
-      featured: true,
-    },
-    {
-      title: "Bonfire INTEX — Full-Stack + ML",
-      description: "Full-stack INTEX deployment: C# / .NET API (Bonfire.API), React and TypeScript frontend, PostgreSQL, Tableau, AWS workflows, and an ml-pipelines package with Jupyter notebooks for ML and data work — all in one monorepo. Live at bonfiresanctuary.org.",
-      image: "https://images.unsplash.com/photo-1758272959860-a4d34d4910dd?w=800&auto=format&fit=crop",
-      type: "code" as ProjectType,
-      technologies: ["C#", ".NET", "TypeScript", "React", "PostgreSQL", "Jupyter", "ML Pipelines", "Tableau", "AWS"],
-      githubUrl: "https://github.com/lafebenn/DEPLOYBonfire-Intex2026COPY",
-      liveUrl: "https://www.bonfiresanctuary.org/",
-      featured: true,
-    },
-    {
-      title: "GlobalHub Platform",
-      description: "Built and deployed a production-scale React frontend serving 10,000+ users as CTO. Managed the full lifecycle using Docker containers and AWS infrastructure (EC2, S3, Elastic Beanstalk), improving product adoption by 40%. Delivered AOM Copenhagen conference release under a Scrum sprint cycle.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-      type: "website" as ProjectType,
-      technologies: ["React", "AWS", "Docker", "Node.js", "TypeScript", "Tailwind CSS"],
-      liveUrl: "https://globalhub.byu.edu/",
-      featured: true,
-    },
-    {
-      title: "FocusFuel — Food & Mood Tracker",
-      description:
-        "Full-stack PERN app correlating nutrition and cognitive performance. 7-table PostgreSQL schema with Express + Node.js REST API, React + TypeScript frontend with Recharts visualizations and Framer Motion animations, and a Supabase-backed deployment. Tracks meals, mood, focus sessions, and surfaces trends over time.",
-      image: "https://images.unsplash.com/photo-1564697364552-7f25dd160f2f?w=800&auto=format&fit=crop",
-      type: "code" as ProjectType,
-      technologies: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Supabase", "Recharts", "Framer Motion"],
-      githubUrl: "https://github.com/lafebenn/focus-fuel-backend/tree/branch2",
-      featured: true,
-    },
-    {
-      title: "ML Fraud Detection Pipeline",
-      description: "End-to-end CRISP-DM machine learning pipeline for fraud classification. Automated data wrangling, MLR, decision trees, ensemble methods (Random Forest, Boosting, Stacking), cross-validation, hyperparameter tuning, and feature selection — with a serialized joblib model served via FastAPI and a Supabase backend for live predictions.",
-      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&fit=crop",
-      type: "code" as ProjectType,
-      technologies: ["Python", "Scikit-learn", "FastAPI", "Supabase", "Pandas", "Ensemble Methods", "joblib"],
-      liveUrl: "https://github.com/lafebenn/ML-Model-IS455-PredictFraud",
-    },
-    {
-      title: "IS 413 Full-Stack Web App",
-      description: "Six-phase full-stack build with ASP.NET MVC (C#) and React: SQLite backend, paginated data tables, server-side filtering, a React Context-powered cart, CRUD admin panel, and REST API — wired end-to-end for IS 413.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop",
-      type: "website" as ProjectType,
-      technologies: ["ASP.NET MVC", "C#", ".NET", "React", "SQLite", "REST API", "Bootstrap"],
-      liveUrl: "https://github.com/lafebenn/Mission11_Bennett",
-    },
-    {
-      title: "AR Research Tools",
-      description: "Engineering augmented reality tools using Unity and the XREAL SDK. Merges 3D-printed physical models with scalable digital environments for HCI research under Prof. James Gaskin at BYU Marriott — supporting AI and technology adoption studies.",
-      image: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&auto=format&fit=crop",
-      type: "code" as ProjectType,
-      technologies: ["Unity", "XREAL SDK", "C#", "HCI", "AR/MR"],
-    },
-    {
-      title: "KPMG-Sponsored INTEX — 4th Place",
-      description: "My team built a full-stack AWS site for Ella Rises — a non-profit helping Latina young women in STEAM — with PostgreSQL, CRUD flows, Tableau dashboards, Python EDA, and UX-focused prototyping. Placed 4th overall in the KPMG-sponsored campus competition. (Deployed on AWS; public URL offline post-competition.)",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop",
-      type: "website" as ProjectType,
-      technologies: ["PostgreSQL", "CRUD flows", "Tableau", "Python EDA", "AWS", "GitHub"],
-    },
-    {
-      title: "Outreach KPI Automation",
-      description: "Directed data automation strategies for 100+ volunteers across 4 regions in Manaus, Brazil. Created Excel workflows to track performance metrics, resulting in a 20% boost in outreach KPIs.",
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop",
-      type: "automation" as ProjectType,
-      technologies: ["Excel", "VBA", "Data Analysis", "Process Automation"],
-    },
-    {
-      title: "Boogle",
-      description: "A personal side project — because sometimes you just need to build something weird. Boogle is exactly what it sounds like and nothing like what you'd expect.",
-      image: "https://images.unsplash.com/photo-1537884944318-390069bb8665?w=800&auto=format&fit=crop",
-      type: "code" as ProjectType,
-      technologies: ["JavaScript", "HTML", "CSS"],
-      githubUrl: "https://github.com/lafebenn/boogle",
-    },
-  ];
+// Rule: every project listed here must have a working link — a public repo, a
+// live site, or a demo hosted on this domain — or an honest one-line note
+// saying why it doesn't. Verify signed out before adding a URL.
+const projects = [
+  {
+    title: "American Mahjong — Solo vs. 3 AI Bots",
+    description:
+      "Playable American Mah Jongg against three AI bots, with a from-scratch engine for the 2026 NMJL card. All client-side — they beat me more often than I'd like.",
+    type: "code" as ProjectType,
+    technologies: ["React", "TypeScript", "Game AI", "Tailwind CSS"],
+    playUrl: "/games/mahjong/",
+    // githubUrl intentionally omitted: lafebenn/emerald-ace-mahjong is private,
+    // so the link 404s signed out. The Play Game link above is the working
+    // link for this card. Add the repo back only once it returns 200 to a
+    // logged-out visitor.
+  },
+  {
+    title: "LTO Pipeline — SAM ROI Automation",
+    description:
+      "Python pipeline that pulls ROI figures out of SAM engagement docs. Turns a 10-hour analysis into under five minutes.",
+    type: "automation" as ProjectType,
+    technologies: ["Python", "Streamlit", "Pandas", "SAM"],
+    linkNote: "Internal Anglepoint tooling. Repository not public.",
+  },
+  {
+    title: "Constitutional Leadership Audit",
+    description:
+      "NLP pipeline scoring 295+ presidential addresses on constitutional leadership. Feeds a co-authored Academy of Management paper in progress.",
+    type: "code" as ProjectType,
+    technologies: ["Python", "NLP", "OpenAI API", "Pandas"],
+    githubUrl: "https://github.com/lafebenn/Leadership-Values-and-Integrity-Analysis",
+  },
+  {
+    title: "Bonfire INTEX — Full-Stack + ML",
+    description:
+      "Case-management platform for a trafficking-survivor nonprofit, now live. Full-stack C# / React / Postgres, shipped as a competition build.",
+    type: "code" as ProjectType,
+    technologies: ["C#", "React", "PostgreSQL", "AWS"],
+    githubUrl: "https://github.com/lafebenn/DEPLOYBonfire-Intex2026COPY",
+    liveUrl: "https://www.bonfiresanctuary.org/",
+  },
+  {
+    title: "GlobalHub Platform",
+    description:
+      "BYU Marriott international-business platform I led as CTO. 10,000+ users on AWS; adoption up 40% month over month after launch.",
+    type: "website" as ProjectType,
+    technologies: ["React", "AWS", "Docker", "TypeScript"],
+    liveUrl: "https://globalhub.byu.edu/",
+  },
+  {
+    title: "FocusFuel — Food & Mood Tracker",
+    description:
+      "PERN app that charts what you eat against how well you focus. Coursework build, no production users.",
+    type: "code" as ProjectType,
+    technologies: ["React", "Node.js", "PostgreSQL", "Express"],
+    githubUrl: "https://github.com/lafebenn/focus-fuel-backend/tree/branch2",
+  },
+  {
+    title: "ML Fraud Detection Pipeline",
+    description:
+      "CRISP-DM fraud classifier comparing five model families. Winning model served live through FastAPI.",
+    type: "code" as ProjectType,
+    technologies: ["Python", "Scikit-learn", "FastAPI", "Pandas"],
+    githubUrl: "https://github.com/lafebenn/ML-Model-IS455-PredictFraud",
+  },
+  {
+    title: "IS 413 Full-Stack Web App",
+    description:
+      "Bookstore app built end-to-end in six phases. ASP.NET, React, cart, admin CRUD, REST API.",
+    type: "website" as ProjectType,
+    technologies: ["ASP.NET MVC", "C#", "React", "SQLite"],
+    githubUrl: "https://github.com/lafebenn/Mission11_Bennett",
+  },
+  {
+    title: "KPMG-Sponsored INTEX — 4th Place",
+    description:
+      "Site and data work for Ella Rises, a STEAM nonprofit. 4th of 40+ in a KPMG-sponsored competition.",
+    type: "website" as ProjectType,
+    technologies: ["PostgreSQL", "Tableau", "AWS", "Python"],
+    githubUrl: "https://github.com/micdai000/INTEX",
+    linkNote: "Team repo. Deployed URL offline post-competition.",
+  },
+  {
+    title: "Boogle",
+    description:
+      "A parody search engine in plain HTML, CSS, and JavaScript. No framework, no build step.",
+    type: "code" as ProjectType,
+    technologies: ["JavaScript", "HTML", "CSS"],
+    githubUrl: "https://github.com/lafebenn/boogle",
+  },
+];
 
 const filters: { label: string; value: ProjectType | "all"; icon: React.ElementType }[] = [
   { label: "All", value: "all", icon: Layers },
@@ -123,24 +107,27 @@ const filters: { label: string; value: ProjectType | "all"; icon: React.ElementT
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectType | "all">("all");
 
-  const filteredProjects = activeFilter === "all"
-    ? projects
-    : projects.filter(p => p.type === activeFilter);
+  const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((p) => p.type === activeFilter);
 
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-6 scroll-mt-24">
+      <FadeContent duration={800} className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Featured <span className="text-gradient">Projects</span>
+            <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A collection of my work spanning web development, automation systems, and open-source contributions.
+            Ten projects, every one with a working link. What it does, what it is
+            built on, and what came of it.
           </p>
         </div>
 
-        {/* Filters */}
+        {/* Filters. aria-pressed matters here: without it the active filter is
+            conveyed by colour alone. */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
           {filters.map(({ label, value, icon: Icon }) => (
             <Button
@@ -149,33 +136,39 @@ const Projects = () => {
               size="sm"
               onClick={() => setActiveFilter(value)}
               className="gap-2"
+              aria-pressed={activeFilter === value}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-4 h-4" aria-hidden="true" />
               {label}
             </Button>
           ))}
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
+          aria-live="polite"
+        >
           {filteredProjects.map((project, index) => (
-            <div
+            <SpotlightCard
               key={project.title}
               className="animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              spotlightColor="rgba(136, 189, 242, 0.18)"
             >
               <ProjectCard {...project} />
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 
         {/* Empty state */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">No projects found in this category.</p>
+            <p className="text-muted-foreground">
+              No projects found in this category.
+            </p>
           </div>
         )}
-      </div>
+      </FadeContent>
     </section>
   );
 };

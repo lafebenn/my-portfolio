@@ -9,17 +9,9 @@ const Footer = () => {
             © {currentYear} William Bennett. All rights reserved.
           </div>
           <div className="text-sm text-muted-foreground">
-            Built with <span className="text-primary">hacker-like skills</span> using React & TailwindCSS
+            Built with React and Tailwind CSS
           </div>
         </div>
-        <a
-          href="https://plausible.io/willbennett.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-muted-foreground/50 hover:text-muted-foreground transition-colors"
-        >
-          Site Analytics ↗
-        </a>
       </div>
     </footer>
   );

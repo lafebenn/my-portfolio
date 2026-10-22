@@ -9,15 +9,22 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <>
+      {/* Keep in sync with the static tags in index.html — these override them
+          at runtime, so a mismatch means the tab title and the link preview
+          disagree. */}
       <Helmet>
-        <title>William Bennett | Information Systems Student and Research Assistant</title>
-        <meta name="description" content="Portfolio showcasing web development projects, automation workflows, and open-source contributions. Building modern digital experiences." />
-        <meta name="keywords" content="developer, portfolio, web development, automation, react, python" />
+        <title>William Bennett | BYU Information Systems, expected April 2027</title>
+        <meta name="description" content="William Bennett — BYU Information Systems student (expected April 2027) targeting consulting and product management roles. Summer 2026 Service Delivery Consultant at Anglepoint, working in software asset management and ITAM. Projects in Python, React, C#/.NET, AWS and ServiceNow." />
       </Helmet>
       
       <div className="min-h-screen bg-background">
+        {/* Fixed navbar + long single-page layout: keyboard users need a way
+            past the nav on every section jump. */}
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Navbar />
-        <main>
+        <main id="main">
           <Hero />
           <Projects />
           <About />

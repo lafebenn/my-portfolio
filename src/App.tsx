@@ -1,29 +1,17 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Resume from "./pages/Resume";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./AppTree";
 
-const queryClient = new QueryClient();
-
+/*
+ * This used to mount two toast systems, a TooltipProvider and a react-query
+ * client. Nothing on the site ever called toast(), rendered a Tooltip, or ran a
+ * query — they were scaffolding from the template. Removing them cut four
+ * runtime dependencies and, incidentally, the only thing in the tree that
+ * touched window.matchMedia during hydration.
+ */
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename="/">
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/resume" element={<Resume />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <BrowserRouter basename="/">
+    <AppRoutes />
+  </BrowserRouter>
 );
 
 export default App;

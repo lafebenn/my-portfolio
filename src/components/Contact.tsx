@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Twitter, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import FadeContent from "@/components/bits/FadeContent/FadeContent";
 
 const Contact = () => {
   return (
     <section id="contact" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+      <FadeContent duration={800} className="max-w-4xl mx-auto text-center">
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
@@ -19,9 +20,9 @@ const Contact = () => {
         {/* Email CTA */}
         <div className="mb-12">
           <Button variant="hero" size="lg" asChild className="group">
-            <a href="mailto:willbennett2003@gmail.com">
+            <a href="mailto:lafebenn@byu.edu">
               <Mail className="w-5 h-5" />
-              willbennett2003@gmail.com
+              lafebenn@byu.edu
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </Button>
@@ -49,7 +50,7 @@ const Contact = () => {
             <span className="text-sm">LinkedIn</span>
           </a>
         </div>
-      </div>
+      </FadeContent>
     </section>
   );
 };
