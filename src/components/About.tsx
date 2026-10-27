@@ -112,23 +112,6 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-2">Currently learning</h3>
-          <p className="text-muted-foreground mb-5 max-w-2xl">
-            Studying and building toward these — nothing shipped yet, but the work is underway.
-          </p>
-          <ul className="space-y-2.5 max-w-2xl">
-            {currentlyLearning.map((item) => (
-              <li
-                key={item}
-                className="text-sm sm:text-base text-muted-foreground leading-relaxed pl-3 relative before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Work</h3>
           <div className="mb-6 max-w-3xl work-focus">
             <TrueFocus
@@ -176,6 +159,23 @@ const About = () => {
               </div>
             ))}
           </AnimatedContent>
+        </div>
+
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-2">Currently learning</h3>
+          <p className="text-muted-foreground mb-5 max-w-2xl">
+            Studying and building toward these — nothing shipped yet, but the work is underway.
+          </p>
+          <ul className="space-y-2.5 max-w-2xl">
+            {currentlyLearning.map((item) => (
+              <li
+                key={item}
+                className="text-sm sm:text-base text-muted-foreground leading-relaxed pl-3 relative before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
