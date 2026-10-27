@@ -3,6 +3,8 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import BlurText from "@/components/bits/BlurText/BlurText";
 import ClientDarkVeil from "@/components/bits/DarkVeil/ClientDarkVeil";
+import Magnet from "@/components/bits/Magnet/Magnet";
+import StarBorder from "@/components/bits/StarBorder/StarBorder";
 
 const contactLinkClass =
   "inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-border transition-all duration-300 group text-sm";
@@ -129,12 +131,29 @@ const Hero = () => {
             className="flex flex-row items-center justify-center lg:justify-start gap-3 animate-fade-in"
             style={{ animationDelay: "0.25s" }}
           >
-            <Button variant="default" size="lg" onClick={scrollToProjects}>
-              View My Work
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <a href="#contact">Get In Touch</a>
-            </Button>
+            <Magnet padding={48} magnetStrength={2.4} maxOffset={18} disabled={reduceMotion}>
+              <Button variant="default" size="lg" onClick={scrollToProjects}>
+                View My Work
+              </Button>
+            </Magnet>
+            <StarBorder
+              as="a"
+              href="#contact"
+              color="#88BDF2"
+              trailColor="#6A89A7"
+              backgroundColor="transparent"
+              textColor="hsl(var(--foreground))"
+              borderColor="hsl(var(--border))"
+              thickness={1.5}
+              radius={999}
+              duration={8}
+              glow={0.35}
+              sparkle={false}
+              theme="dark"
+              className="inline-flex items-center justify-center h-11 px-8 text-sm font-medium"
+            >
+              Get In Touch
+            </StarBorder>
           </div>
         </div>
 

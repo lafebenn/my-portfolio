@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Globe, Code2, Zap, Layers } from "lucide-react";
 import FadeContent from "@/components/bits/FadeContent/FadeContent";
 import SpotlightCard from "@/components/bits/SpotlightCard/SpotlightCard";
+import GradientText from "@/components/bits/GradientText/GradientText";
+import ScrollReveal from "@/components/bits/ScrollReveal/ScrollReveal";
 
 // Rule: every project listed here must have a working link — a public repo, a
 // live site, or a demo hosted on this domain — or an honest one-line note
@@ -13,6 +15,7 @@ const projects = [
     title: "American Mahjong — Solo vs. 3 AI Bots",
     description:
       "Playable American Mah Jongg against three AI bots, with a from-scratch engine for the 2026 NMJL card. All client-side — they beat me more often than I'd like.",
+    image: "/projects/mahjong.jpg",
     type: "code" as ProjectType,
     technologies: ["React", "TypeScript", "Game AI", "Tailwind CSS"],
     playUrl: "/games/mahjong/",
@@ -25,6 +28,7 @@ const projects = [
     title: "LTO Pipeline — SAM ROI Automation",
     description:
       "Python pipeline that pulls ROI figures out of SAM engagement docs. Turns a 10-hour analysis into under five minutes.",
+    image: "/projects/lto.jpg",
     type: "automation" as ProjectType,
     technologies: ["Python", "Streamlit", "Pandas", "SAM"],
     linkNote: "Internal Anglepoint tooling. Repository not public.",
@@ -33,6 +37,7 @@ const projects = [
     title: "Constitutional Leadership Audit",
     description:
       "NLP pipeline scoring 295+ presidential addresses on constitutional leadership. Feeds a co-authored Academy of Management paper in progress.",
+    image: "/projects/leadership.jpg",
     type: "code" as ProjectType,
     technologies: ["Python", "NLP", "OpenAI API", "Pandas"],
     githubUrl: "https://github.com/lafebenn/Leadership-Values-and-Integrity-Analysis",
@@ -41,6 +46,7 @@ const projects = [
     title: "Bonfire INTEX — Full-Stack + ML",
     description:
       "Case-management platform for a trafficking-survivor nonprofit, now live. Full-stack C# / React / Postgres, shipped as a competition build.",
+    image: "/projects/bonfire.jpg",
     type: "code" as ProjectType,
     technologies: ["C#", "React", "PostgreSQL", "AWS"],
     githubUrl: "https://github.com/lafebenn/DEPLOYBonfire-Intex2026COPY",
@@ -50,6 +56,7 @@ const projects = [
     title: "GlobalHub Platform",
     description:
       "BYU Marriott international-business platform I led as CTO. 10,000+ users on AWS; adoption up 40% month over month after launch.",
+    image: "/projects/globalhub.jpg",
     type: "website" as ProjectType,
     technologies: ["React", "AWS", "Docker", "TypeScript"],
     liveUrl: "https://globalhub.byu.edu/",
@@ -58,6 +65,7 @@ const projects = [
     title: "FocusFuel — Food & Mood Tracker",
     description:
       "PERN app that charts what you eat against how well you focus. Coursework build, no production users.",
+    image: "/projects/focusfuel.jpg",
     type: "code" as ProjectType,
     technologies: ["React", "Node.js", "PostgreSQL", "Express"],
     githubUrl: "https://github.com/lafebenn/focus-fuel-backend/tree/branch2",
@@ -66,6 +74,7 @@ const projects = [
     title: "ML Fraud Detection Pipeline",
     description:
       "CRISP-DM fraud classifier comparing five model families. Winning model served live through FastAPI.",
+    image: "/projects/fraud.jpg",
     type: "code" as ProjectType,
     technologies: ["Python", "Scikit-learn", "FastAPI", "Pandas"],
     githubUrl: "https://github.com/lafebenn/ML-Model-IS455-PredictFraud",
@@ -74,6 +83,7 @@ const projects = [
     title: "IS 413 Full-Stack Web App",
     description:
       "Bookstore app built end-to-end in six phases. ASP.NET, React, cart, admin CRUD, REST API.",
+    image: "/projects/bookstore.jpg",
     type: "website" as ProjectType,
     technologies: ["ASP.NET MVC", "C#", "React", "SQLite"],
     githubUrl: "https://github.com/lafebenn/Mission11_Bennett",
@@ -82,6 +92,7 @@ const projects = [
     title: "KPMG-Sponsored INTEX — 4th Place",
     description:
       "Site and data work for Ella Rises, a STEAM nonprofit. 4th of 70 teams in a KPMG-sponsored competition.",
+    image: "/projects/kpmg.jpg",
     type: "website" as ProjectType,
     technologies: ["PostgreSQL", "Tableau", "AWS", "Python"],
     githubUrl: "https://github.com/micdai000/INTEX",
@@ -91,6 +102,7 @@ const projects = [
     title: "Boogle",
     description:
       "A parody search engine in plain HTML, CSS, and JavaScript. No framework, no build step.",
+    image: "/projects/boogle.jpg",
     type: "code" as ProjectType,
     technologies: ["JavaScript", "HTML", "CSS"],
     githubUrl: "https://github.com/lafebenn/boogle",
@@ -115,15 +127,32 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 scroll-mt-24">
       <FadeContent duration={800} className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-gradient">Projects</span>
+            <GradientText
+              colors={["#88BDF2", "#BDDFDC", "#6A89A7", "#88BDF2"]}
+              animationSpeed={6}
+              direction="diagonal"
+              className="inline-block"
+            >
+              Projects
+            </GradientText>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <ScrollReveal
+            as="p"
+            splitBy="words"
+            effect="rise"
+            mode="enter"
+            baseOpacity={0.2}
+            enableBlur={false}
+            stagger={0.04}
+            duration={0.7}
+            textClassName="text-muted-foreground text-lg max-w-2xl mx-auto"
+            containerClassName="mx-auto max-w-2xl"
+          >
             Learned on the way, then used for real. What it does, what it is
             built on, and what came of it.
-          </p>
+          </ScrollReveal>
         </div>
 
         {/* Filters. aria-pressed matters here: without it the active filter is
@@ -144,12 +173,11 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
           aria-live="polite"
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <SpotlightCard
               key={project.title}
               className="animate-scale-in"
@@ -160,7 +188,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Empty state */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted-foreground">

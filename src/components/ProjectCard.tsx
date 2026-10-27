@@ -1,12 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Code2, Globe, Zap, Gamepad2 } from "lucide-react";
+import GlareHover from "@/components/bits/GlareHover/GlareHover";
 
 export type ProjectType = "website" | "code" | "automation";
 
 interface ProjectCardProps {
   title: string;
   description: string;
+  image?: string;
   type: ProjectType;
   technologies: string[];
   liveUrl?: string;
@@ -42,6 +44,7 @@ const typeLabels = {
 const ProjectCard = ({
   title,
   description,
+  image,
   type,
   technologies,
   liveUrl,
@@ -57,9 +60,38 @@ const ProjectCard = ({
 
   return (
     <article className="group relative h-full flex flex-col bg-gradient-card rounded-xl border border-border/50 overflow-hidden transition-all duration-500 hover:border-border hover:glow-primary">
-      {/* Content */}
+      {image && (
+        <div className="relative aspect-video overflow-hidden">
+          <GlareHover
+            width="100%"
+            height="100%"
+            background="transparent"
+            borderRadius="0"
+            borderColor="transparent"
+            glareColor="#88BDF2"
+            glareOpacity={0.35}
+            glareAngle={-35}
+            glareSize={45}
+            softness={0.55}
+            variant="sheen"
+            mode="hover"
+            className="!absolute inset-0 !w-full !h-full !block"
+          >
+            <img
+              src={image}
+              alt=""
+              width={1200}
+              height={675}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </GlareHover>
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent pointer-events-none" />
+        </div>
+      )}
+
       <div className="p-6 flex flex-col flex-1">
-        {/* Type badge */}
         <div className="flex items-center gap-2 mb-4">
           <Badge variant={typeBadgeVariants[type]} className="flex items-center gap-1.5">
             <TypeIcon className="w-3 h-3" aria-hidden="true" />
@@ -67,7 +99,6 @@ const ProjectCard = ({
           </Badge>
         </div>
 
-        {/* Title */}
         <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
           {title}
         </h3>
@@ -76,7 +107,6 @@ const ProjectCard = ({
           {description}
         </p>
 
-        {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-6">
           {technologies.map((tech) => (
             <Badge key={tech} variant="tech">
@@ -129,7 +159,6 @@ const ProjectCard = ({
         </div>
       </div>
 
-      {/* Hover glow effect */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
         <div className="absolute -inset-px bg-gradient-to-r from-primary/10 via-transparent to-accent/10 rounded-xl" />
       </div>

@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import FadeContent from "@/components/bits/FadeContent/FadeContent";
+import CountUp from "@/components/bits/CountUp/CountUp";
+import ScrollReveal from "@/components/bits/ScrollReveal/ScrollReveal";
 
 const skillCategories = [
   {
@@ -60,7 +62,13 @@ const About = () => {
               />
             </div>
             <div className="mt-4 flex items-baseline gap-3">
-              <span className="text-3xl font-bold text-gradient">10,000+</span>
+              <CountUp
+                to={10000}
+                separator=","
+                suffix="+"
+                duration={1.6}
+                className="text-3xl font-bold text-gradient"
+              />
               <span className="text-sm text-muted-foreground">users on production apps</span>
             </div>
           </div>
@@ -68,9 +76,20 @@ const About = () => {
 
         <div>
           <h3 className="text-2xl sm:text-3xl font-bold mb-2">Work</h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl">
+          <ScrollReveal
+            as="p"
+            splitBy="words"
+            effect="rise"
+            mode="enter"
+            baseOpacity={0.15}
+            enableBlur={false}
+            stagger={0.045}
+            duration={0.65}
+            textClassName="text-muted-foreground max-w-2xl"
+            containerClassName="mb-6 max-w-2xl"
+          >
             Real clients and real users. I picked up the domain, then put it to work.
-          </p>
+          </ScrollReveal>
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="rounded-xl border border-border/50 bg-gradient-card p-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Anglepoint</p>
