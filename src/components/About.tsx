@@ -5,26 +5,11 @@ import TrueFocus from "@/components/bits/TrueFocus/TrueFocus";
 import AnimatedContent from "@/components/bits/AnimatedContent/AnimatedContent";
 
 const currentlyLearning = [
-  {
-    title: "Business strategy & stakeholder management",
-    detail: "How decisions get shaped, sold, and executed across technical and non-technical teams.",
-  },
-  {
-    title: "Advanced spreadsheet automation",
-    detail: "Turning messy Excel workflows into reliable systems people actually keep using.",
-  },
-  {
-    title: "Economic analysis & impact measurement",
-    detail: "Reading the numbers behind a decision — cost, value, and what changed because of it.",
-  },
-  {
-    title: "ML for economic trends",
-    detail: "Designing pipelines that forecast markets and pressure-test assumptions with data.",
-  },
-  {
-    title: "Student opportunity risk models",
-    detail: "Predicting who is at risk of missing internships and jobs — early enough to intervene.",
-  },
+  "Business strategy and stakeholder management",
+  "Advanced spreadsheet automation",
+  "Economic analysis and impact measurement",
+  "ML pipelines for predicting economic trends",
+  "ML models that flag students at risk of missing internships and jobs",
 ];
 
 const skillCategories = [
@@ -128,17 +113,16 @@ const About = () => {
 
         <div>
           <h3 className="text-2xl sm:text-3xl font-bold mb-2">Currently learning</h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl">
-            The next domains I&apos;m teaching myself — same pattern as everything else on this site.
+          <p className="text-muted-foreground mb-5 max-w-2xl">
+            Studying and building toward these — nothing shipped yet, but the work is underway.
           </p>
-          <ul className="grid sm:grid-cols-2 gap-4 max-w-4xl">
+          <ul className="space-y-2.5 max-w-2xl">
             {currentlyLearning.map((item) => (
               <li
-                key={item.title}
-                className="rounded-xl border border-border/50 bg-gradient-card p-4"
+                key={item}
+                className="text-sm sm:text-base text-muted-foreground leading-relaxed pl-3 relative before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary"
               >
-                <p className="text-sm font-medium text-foreground mb-1">{item.title}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                {item}
               </li>
             ))}
           </ul>
