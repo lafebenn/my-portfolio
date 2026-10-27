@@ -8,6 +8,8 @@ export type ProjectType = "website" | "code" | "automation";
 interface ProjectCardProps {
   title: string;
   description: string;
+  /** One-line outcome that sells the result, not the stack. */
+  outcome?: string;
   image?: string;
   type: ProjectType;
   technologies: string[];
@@ -44,6 +46,7 @@ const typeLabels = {
 const ProjectCard = ({
   title,
   description,
+  outcome,
   image,
   type,
   technologies,
@@ -103,9 +106,15 @@ const ProjectCard = ({
           {title}
         </h3>
 
-        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+        <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
           {description}
         </p>
+
+        {outcome && (
+          <p className="text-sm text-foreground/90 font-medium mb-4 leading-snug border-l-2 border-primary/60 pl-3">
+            {outcome}
+          </p>
+        )}
 
         <div className="flex flex-wrap gap-2 mb-6">
           {technologies.map((tech) => (

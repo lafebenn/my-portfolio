@@ -15,6 +15,7 @@ const projects = [
     title: "American Mahjong — Solo vs. 3 AI Bots",
     description:
       "Playable American Mah Jongg against three AI bots, with a from-scratch engine for the 2026 NMJL card. All client-side — they beat me more often than I'd like.",
+    outcome: "Shipped a full game engine solo — playable in the browser, no backend.",
     image: "/projects/mahjong.jpg",
     type: "code" as ProjectType,
     technologies: ["React", "TypeScript", "Game AI", "Tailwind CSS"],
@@ -28,6 +29,7 @@ const projects = [
     title: "LTO Pipeline — SAM ROI Automation",
     description:
       "Python pipeline that pulls ROI figures out of SAM engagement docs. Turns a 10-hour analysis into under five minutes.",
+    outcome: "Cut a 10-hour analysis to under 5 minutes — ~99% faster for client work.",
     image: "/projects/lto.jpg",
     type: "automation" as ProjectType,
     technologies: ["Python", "Streamlit", "Pandas", "SAM"],
@@ -37,6 +39,7 @@ const projects = [
     title: "Constitutional Leadership Audit",
     description:
       "NLP pipeline scoring 295+ presidential addresses on constitutional leadership. Feeds a co-authored Academy of Management paper in progress.",
+    outcome: "Replaced ~6 weeks of manual scoring with a 10-hour AI pipeline.",
     image: "/projects/leadership.jpg",
     type: "code" as ProjectType,
     technologies: ["Python", "NLP", "OpenAI API", "Pandas"],
@@ -46,6 +49,7 @@ const projects = [
     title: "Bonfire INTEX — Full-Stack + ML",
     description:
       "Case-management platform for a trafficking-survivor nonprofit, now live. Full-stack C# / React / Postgres, shipped as a competition build.",
+    outcome: "Live in production for a nonprofit that still uses it today.",
     image: "/projects/bonfire.jpg",
     type: "code" as ProjectType,
     technologies: ["C#", "React", "PostgreSQL", "AWS"],
@@ -56,6 +60,7 @@ const projects = [
     title: "GlobalHub Platform",
     description:
       "BYU Marriott international-business platform I led as CTO. 10,000+ users on AWS; adoption up 40% month over month after launch.",
+    outcome: "10,000+ users; 40% month-over-month adoption after launch.",
     image: "/projects/globalhub.jpg",
     type: "website" as ProjectType,
     technologies: ["React", "AWS", "Docker", "TypeScript"],
@@ -65,6 +70,7 @@ const projects = [
     title: "FocusFuel — Food & Mood Tracker",
     description:
       "PERN app that charts what you eat against how well you focus. Coursework build, no production users.",
+    outcome: "End-to-end PERN build: schema, API, charts — learning by shipping.",
     image: "/projects/focusfuel.jpg",
     type: "code" as ProjectType,
     technologies: ["React", "Node.js", "PostgreSQL", "Express"],
@@ -74,6 +80,7 @@ const projects = [
     title: "ML Fraud Detection Pipeline",
     description:
       "CRISP-DM fraud classifier comparing five model families. Winning model served live through FastAPI.",
+    outcome: "Compared five model families; winning model served live via FastAPI.",
     image: "/projects/fraud.jpg",
     type: "code" as ProjectType,
     technologies: ["Python", "Scikit-learn", "FastAPI", "Pandas"],
@@ -83,6 +90,7 @@ const projects = [
     title: "IS 413 Full-Stack Web App",
     description:
       "Bookstore app built end-to-end in six phases. ASP.NET, React, cart, admin CRUD, REST API.",
+    outcome: "Six-phase full-stack delivery: cart, admin CRUD, and REST API wired end-to-end.",
     image: "/projects/bookstore.jpg",
     type: "website" as ProjectType,
     technologies: ["ASP.NET MVC", "C#", "React", "SQLite"],
@@ -92,6 +100,7 @@ const projects = [
     title: "KPMG-Sponsored INTEX — 4th Place",
     description:
       "Site and data work for Ella Rises, a STEAM nonprofit. 4th of 70 teams in a KPMG-sponsored competition.",
+    outcome: "4th of 70 teams — full-stack site and Tableau for a STEAM nonprofit.",
     image: "/projects/kpmg.jpg",
     type: "website" as ProjectType,
     technologies: ["PostgreSQL", "Tableau", "AWS", "Python"],
@@ -102,6 +111,7 @@ const projects = [
     title: "Boogle",
     description:
       "A parody search engine in plain HTML, CSS, and JavaScript. No framework, no build step.",
+    outcome: "Built for fun, shipped in vanilla JS — no framework, no build step.",
     image: "/projects/boogle.jpg",
     type: "code" as ProjectType,
     technologies: ["JavaScript", "HTML", "CSS"],

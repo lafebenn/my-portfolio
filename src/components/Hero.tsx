@@ -3,7 +3,6 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import BlurText from "@/components/bits/BlurText/BlurText";
 import ClientDarkVeil from "@/components/bits/DarkVeil/ClientDarkVeil";
-import Magnet from "@/components/bits/Magnet/Magnet";
 import StarBorder from "@/components/bits/StarBorder/StarBorder";
 
 const contactLinkClass =
@@ -131,11 +130,9 @@ const Hero = () => {
             className="flex flex-row items-center justify-center lg:justify-start gap-3 animate-fade-in"
             style={{ animationDelay: "0.25s" }}
           >
-            <Magnet padding={48} magnetStrength={2.4} maxOffset={18} disabled={reduceMotion}>
-              <Button variant="default" size="lg" onClick={scrollToProjects}>
-                View My Work
-              </Button>
-            </Magnet>
+            <Button variant="default" size="lg" onClick={scrollToProjects}>
+              View My Work
+            </Button>
             <StarBorder
               as="a"
               href="#contact"

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 import FadeContent from "@/components/bits/FadeContent/FadeContent";
 import GradientText from "@/components/bits/GradientText/GradientText";
-import Magnet from "@/components/bits/Magnet/Magnet";
 
 const Contact = () => {
   return (
@@ -27,15 +26,13 @@ const Contact = () => {
         </div>
 
         <div className="mb-12 flex justify-center">
-          <Magnet padding={56} magnetStrength={2.2} maxOffset={16}>
-            <Button variant="hero" size="lg" asChild className="group">
-              <a href="mailto:lafebenn@byu.edu">
-                <Mail className="w-5 h-5" />
-                lafebenn@byu.edu
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-            </Button>
-          </Magnet>
+          <Button variant="hero" size="lg" asChild className="group">
+            <a href="mailto:lafebenn@byu.edu">
+              <Mail className="w-5 h-5" />
+              lafebenn@byu.edu
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </Button>
         </div>
 
         {/* Social Links */}

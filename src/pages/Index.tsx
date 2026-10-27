@@ -19,14 +19,15 @@ const Index = () => {
       </Helmet>
 
       <ClickSpark
-        sparkColor={["#88BDF2", "#BDDFDC", "#6A89A7"]}
-        sparkCount={8}
-        sparkRadius={18}
-        sparkSize={9}
-        duration={520}
+        sparkColor={["#88BDF2", "#BDDFDC"]}
+        sparkCount={4}
+        sparkRadius={12}
+        sparkSize={6}
+        duration={380}
         easing="ease-out"
-        shape="line"
-        glow={0.35}
+        shape="dot"
+        glow={0.15}
+        randomness={0.35}
         className="block"
         style={{ height: "auto", minHeight: "100vh" }}
       >

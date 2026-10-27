@@ -3,7 +3,29 @@ import FadeContent from "@/components/bits/FadeContent/FadeContent";
 import CountUp from "@/components/bits/CountUp/CountUp";
 import TrueFocus from "@/components/bits/TrueFocus/TrueFocus";
 import AnimatedContent from "@/components/bits/AnimatedContent/AnimatedContent";
-import ShinyText from "@/components/bits/ShinyText/ShinyText";
+
+const currentlyLearning = [
+  {
+    title: "Business strategy & stakeholder management",
+    detail: "How decisions get shaped, sold, and executed across technical and non-technical teams.",
+  },
+  {
+    title: "Advanced spreadsheet automation",
+    detail: "Turning messy Excel workflows into reliable systems people actually keep using.",
+  },
+  {
+    title: "Economic analysis & impact measurement",
+    detail: "Reading the numbers behind a decision — cost, value, and what changed because of it.",
+  },
+  {
+    title: "ML for economic trends",
+    detail: "Designing pipelines that forecast markets and pressure-test assumptions with data.",
+  },
+  {
+    title: "Student opportunity risk models",
+    detail: "Predicting who is at risk of missing internships and jobs — early enough to intervene.",
+  },
+];
 
 const skillCategories = [
   {
@@ -105,6 +127,24 @@ const About = () => {
         </div>
 
         <div>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-2">Currently learning</h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            The next domains I&apos;m teaching myself — same pattern as everything else on this site.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-4 max-w-4xl">
+            {currentlyLearning.map((item) => (
+              <li
+                key={item.title}
+                className="rounded-xl border border-border/50 bg-gradient-card p-4"
+              >
+                <p className="text-sm font-medium text-foreground mb-1">{item.title}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Work</h3>
           <div className="mb-6 max-w-3xl work-focus">
             <TrueFocus
@@ -170,16 +210,7 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-6">
-            <ShinyText
-              text="Tools"
-              color="hsl(174 28% 94%)"
-              shineColor="#88BDF2"
-              speed={2.4}
-              shineWidth={28}
-              className="text-2xl sm:text-3xl font-bold"
-            />
-          </h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-6">Tools</h3>
           <div className="space-y-4">
             {skillCategories.map((category) => (
               <div key={category.name}>
