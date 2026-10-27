@@ -1,7 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import FadeContent from "@/components/bits/FadeContent/FadeContent";
 import CountUp from "@/components/bits/CountUp/CountUp";
-import ScrollReveal from "@/components/bits/ScrollReveal/ScrollReveal";
 import TrueFocus from "@/components/bits/TrueFocus/TrueFocus";
 import AnimatedContent from "@/components/bits/AnimatedContent/AnimatedContent";
 import ShinyText from "@/components/bits/ShinyText/ShinyText";
@@ -107,7 +106,7 @@ const About = () => {
 
         <div>
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Work</h3>
-          <div className="mb-4 max-w-3xl work-focus">
+          <div className="mb-6 max-w-3xl work-focus">
             <TrueFocus
               sentence="Learn it — Use it — Ship it"
               separator=" — "
@@ -121,21 +120,6 @@ const About = () => {
               className="!justify-start"
             />
           </div>
-          <ScrollReveal
-            as="p"
-            splitBy="words"
-            effect="rise"
-            mode="enter"
-            baseOpacity={0.15}
-            enableBlur={false}
-            stagger={0.04}
-            duration={0.65}
-            textClassName="text-muted-foreground max-w-2xl"
-            containerClassName="mb-6 max-w-2xl"
-          >
-            I taught myself how to learn anything efficiently, and that is the thread through
-            every role below — pick up the domain fast, then put it to work for real people.
-          </ScrollReveal>
           <AnimatedContent
             distance={28}
             duration={0.7}
