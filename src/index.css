@@ -110,6 +110,13 @@
     );
   }
 
+  /* TrueFocus defaults to 3rem; keep the Work line on-brand and readable. */
+  .work-focus .focus-word {
+    font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }

@@ -2,6 +2,9 @@ import { Badge } from "@/components/ui/badge";
 import FadeContent from "@/components/bits/FadeContent/FadeContent";
 import CountUp from "@/components/bits/CountUp/CountUp";
 import ScrollReveal from "@/components/bits/ScrollReveal/ScrollReveal";
+import TrueFocus from "@/components/bits/TrueFocus/TrueFocus";
+import AnimatedContent from "@/components/bits/AnimatedContent/AnimatedContent";
+import ShinyText from "@/components/bits/ShinyText/ShinyText";
 
 const skillCategories = [
   {
@@ -27,6 +30,34 @@ const skillCategories = [
   {
     name: "Languages",
     skills: ["English", "Portuguese", "Spanish"],
+  },
+];
+
+const workCards = [
+  {
+    name: "Anglepoint",
+    role: "Service Delivery Consultant · Summer 2026",
+    bullets: [
+      "99% faster data processing from a Python and Streamlit pipeline, cutting 10 hours to under 5 minutes.",
+      "$2M a year in savings identified by automating licensing analysis across 10+ Fortune 500 engagements.",
+      "7 publisher environments supported in ServiceNow SAM Pro and Flexera One, removing data-quality blockers.",
+    ],
+  },
+  {
+    name: "GlobalHub",
+    role: "CTO / Interim CEO · Apr–Aug 2025",
+    bullets: [
+      "40% increase in product adoption from leading a cross-functional team through a customer-facing release.",
+      "10,000+ users served by a production app deployed on AWS and Docker.",
+      "Shipped 8 features as 1 of 2 engineers, managing a 15-person team and liaising with 5 cofounders and partners.",
+    ],
+  },
+  {
+    name: "Research",
+    role: "Research Associate · Romney Institute",
+    bullets: [
+      "295+ documents scored in 10 hours via AI classification, replacing 6 weeks of manual work for a co-authored paper.",
+    ],
   },
 ];
 
@@ -75,7 +106,21 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-2">Work</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4">Work</h3>
+          <div className="mb-4 max-w-3xl work-focus">
+            <TrueFocus
+              sentence="Learn it — Use it — Ship it"
+              separator=" — "
+              manualMode={false}
+              blurAmount={4}
+              borderColor="#88BDF2"
+              glowColor="rgba(136, 189, 242, 0.35)"
+              animationDuration={0.55}
+              pauseBetweenAnimations={1.1}
+              focusStyle="brackets"
+              className="!justify-start"
+            />
+          </div>
           <ScrollReveal
             as="p"
             splitBy="words"
@@ -83,33 +128,46 @@ const About = () => {
             mode="enter"
             baseOpacity={0.15}
             enableBlur={false}
-            stagger={0.045}
+            stagger={0.04}
             duration={0.65}
             textClassName="text-muted-foreground max-w-2xl"
             containerClassName="mb-6 max-w-2xl"
           >
-            Real clients and real users. I picked up the domain, then put it to work.
+            I taught myself how to learn anything efficiently, and that is the thread through
+            every role below — pick up the domain fast, then put it to work for real people.
           </ScrollReveal>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="rounded-xl border border-border/50 bg-gradient-card p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Anglepoint</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Service Delivery Consultant, summer 2026. Built an agentic analysis pipeline that cut a 10-hour licensing review to under 5 minutes across Fortune 500 engagements.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border/50 bg-gradient-card p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">GlobalHub</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                CTO of a BYU Marriott platform before finishing undergrad. Production React on AWS, 10,000+ users, 40% month-over-month adoption after launch.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border/50 bg-gradient-card p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Research</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Research associate co-authoring an Academy of Management Perspectives paper on constitutional leadership, using NLP on presidential rhetoric.
-              </p>
-            </div>
-          </div>
+          <AnimatedContent
+            distance={28}
+            duration={0.7}
+            ease="power2.out"
+            initialOpacity={0}
+            animateOpacity
+            threshold={0.15}
+            stagger={0.12}
+            className="grid sm:grid-cols-3 gap-6"
+          >
+            {workCards.map((card) => (
+              <div
+                key={card.name}
+                className="rounded-xl border border-border/50 bg-gradient-card p-5 h-full"
+              >
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-1">
+                  {card.name}
+                </p>
+                <p className="text-xs text-muted-foreground mb-3">{card.role}</p>
+                <ul className="space-y-2.5">
+                  {card.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="text-sm text-muted-foreground leading-relaxed pl-3 relative before:absolute before:left-0 before:top-[0.55em] before:h-1 before:w-1 before:rounded-full before:bg-primary"
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </AnimatedContent>
         </div>
 
         <div>
@@ -128,7 +186,16 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-6">Tools</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-6">
+            <ShinyText
+              text="Tools"
+              color="hsl(174 28% 94%)"
+              shineColor="#88BDF2"
+              speed={2.4}
+              shineWidth={28}
+              className="text-2xl sm:text-3xl font-bold"
+            />
+          </h3>
           <div className="space-y-4">
             {skillCategories.map((category) => (
               <div key={category.name}>
